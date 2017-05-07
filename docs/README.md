@@ -4,22 +4,20 @@
 
 - [General](general)
   - [**CLI Commands**](general/commands.md)
-  - [Introduction ](general/introduction.md)
   - [Tool Configuration](general/files.md)
   - [Server Configurations](general/server-configs.md)
   - [Deployment](general/deployment.md) *(currently Heroku specific)*
   - [FAQ](general/faq.md)
   - [Gotchas](general/gotchas.md)
   - [Remove](general/remove.md)
-  - [Extracting components](general/components.md)
 - [Testing](testing)
   - [Unit Testing](testing/unit-testing.md)
   - [Component Testing](testing/component-testing.md)
   - [Remote Testing](testing/remote-testing.md)
 - [CSS](css)
-  - [`styled-components`](css/styled-components.md)
+  - [PostCSS](css/postcss.md)
+  - [CSS Modules](css/css-modules.md)
   - [sanitize.css](css/sanitize.md)
-  - [Using Sass](css/sass.md)
 - [JS](js)
   - [Redux](js/redux.md)
   - [ImmutableJS](js/immutablejs.md)
@@ -78,17 +76,21 @@ JavaScript, HTML and tests.
 The rest of the folders and files only exist to make your life easier, and
 should not need to be touched.
 
-*(If they do have to be changed, please [submit an issue](https://github.com/react-boilerplate/react-boilerplate/issues)!)*
+*(If they do have to be changed, please [submit an issue](https://github.com/mxstbr/react-boilerplate/issues)!)*
 
 ### CSS
 
-Utilising [tagged template literals](https://github.com/styled-components/styled-components/blob/master/docs/tagged-template-literals.md)
-(a recent addition to JavaScript) and the [power of CSS](https://github.com/styled-components/styled-components/blob/master/docs/css-we-support.md),
-`styled-components` allows you to write actual CSS code to style your components.
-It also removes the mapping between components and styles – using components as a
-low-level styling construct could not be easier!
+Each component `import`s its styling dependencies from a co-located `styles.css`
+module.
 
-See the [CSS documentation](./css/README.md) for more information.
+A production build transpiles these modules into page-specific CSS files (based
+on which components are actually used), while any shared styles are automatically
+extracted into a "common" stylesheet.
+
+This means the leanest, fastest payload for your users.
+
+See the [CSS documentation](./css/README.md) for more information about PostCSS
+and CSS modules.
 
 ### JS
 
@@ -108,6 +110,12 @@ write head tags can be found [here](https://github.com/nfl/react-helmet#examples
 
 For a thorough explanation of the testing procedure, see the
 [testing documentation](./testing/README.md)!
+
+#### Performance testing
+
+With the production server running (i.e. while `npm run start:production` is running in
+another tab), enter `npm run pagespeed` to run Google PageSpeed Insights and
+get a performance check right in your terminal!
 
 #### Browser testing
 

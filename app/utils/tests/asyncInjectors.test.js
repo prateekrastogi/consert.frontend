@@ -2,17 +2,17 @@
  * Test async injectors
  */
 
+import expect from 'expect';
+import configureStore from 'store.js';
 import { memoryHistory } from 'react-router';
 import { put } from 'redux-saga/effects';
 import { fromJS } from 'immutable';
-
-import configureStore from '../../store';
 
 import {
   injectAsyncReducer,
   injectAsyncSagas,
   getAsyncInjectors,
-} from '../asyncInjectors';
+} from 'utils/asyncInjectors';
 
 // Fixtures
 
@@ -39,7 +39,7 @@ describe('asyncInjectors', () => {
   let store;
 
   describe('getAsyncInjectors', () => {
-    beforeAll(() => {
+    before(() => {
       store = configureStore({}, memoryHistory);
     });
 
@@ -66,12 +66,12 @@ describe('asyncInjectors', () => {
         result = err.name === 'Invariant Violation';
       }
 
-      expect(result).toBe(true);
+      expect(result).toEqual(true);
     });
   });
 
   describe('helpers', () => {
-    beforeAll(() => {
+    before(() => {
       store = configureStore({}, memoryHistory);
     });
 
@@ -85,15 +85,6 @@ describe('asyncInjectors', () => {
         const expected = initialState;
 
         expect(actual.toJS()).toEqual(expected.toJS());
-      });
-
-      it('should not assign reducer if already existing', () => {
-        const injectReducer = injectAsyncReducer(store);
-
-        injectReducer('test', reducer);
-        injectReducer('test', () => {});
-
-        expect(store.asyncReducers.test.toString()).toEqual(reducer.toString());
       });
 
       it('should throw if passed invalid name', () => {
@@ -113,7 +104,7 @@ describe('asyncInjectors', () => {
           result = err.name === 'Invariant Violation';
         }
 
-        expect(result).toBe(true);
+        expect(result).toEqual(true);
       });
 
       it('should throw if passed invalid reducer', () => {
@@ -133,7 +124,7 @@ describe('asyncInjectors', () => {
           result = err.name === 'Invariant Violation';
         }
 
-        expect(result).toBe(true);
+        expect(result).toEqual(true);
       });
     });
 
@@ -166,7 +157,7 @@ describe('asyncInjectors', () => {
           result = err.name === 'Invariant Violation';
         }
 
-        expect(result).toBe(true);
+        expect(result).toEqual(true);
       });
     });
   });

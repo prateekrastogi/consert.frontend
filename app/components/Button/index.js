@@ -1,46 +1,45 @@
 /**
  *
- * Button.react.js
+ * Button
  *
- * A common button, if you pass it a prop "route" it'll render a link to a react-router route
- * otherwise it'll render a link with an onclick
  */
 
 import React, { PropTypes, Children } from 'react';
 
-import A from './A';
-import StyledButton from './StyledButton';
-import Wrapper from './Wrapper';
+import { FormattedMessage } from 'react-intl';
+import messages from './messages';
+
 
 function Button(props) {
-  // Render an anchor tag
+  const className = props.className ? props.className : 'ui button';
   let button = (
-    <A href={props.href} onClick={props.onClick}>
+    <button className={className} href={props.href} onClick={props.onClick}>
       {Children.toArray(props.children)}
-    </A>
+    </button>
   );
-
-  // If the Button has a handleRoute prop, we want to render a button
   if (props.handleRoute) {
     button = (
-      <StyledButton onClick={props.handleRoute}>
+      <button className={className} onClick={props.handleRoute}>
         {Children.toArray(props.children)}
-      </StyledButton>
+      </button>
     );
   }
 
   return (
-    <Wrapper>
+    <div>
       {button}
-    </Wrapper>
+      <FormattedMessage {...messages.header} />
+    </div>
   );
 }
 
 Button.propTypes = {
+  className: PropTypes.string,
   handleRoute: PropTypes.func,
+  children: PropTypes.node.isRequired,
   href: PropTypes.string,
   onClick: PropTypes.func,
-  children: PropTypes.node.isRequired,
 };
+
 
 export default Button;

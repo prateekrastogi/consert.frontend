@@ -2,12 +2,11 @@
  * Route Generator
  */
 const fs = require('fs');
-const path = require('path');
 const componentExists = require('../utils/componentExists');
 
 function reducerExists(comp) {
   try {
-    fs.accessSync(path.join(__dirname, `../../../app/containers/${comp}/reducer.js`), fs.F_OK);
+    fs.accessSync(`app/containers/${comp}/reducer.js`, fs.F_OK);
     return true;
   } catch (e) {
     return false;
@@ -16,7 +15,7 @@ function reducerExists(comp) {
 
 function sagasExists(comp) {
   try {
-    fs.accessSync(path.join(__dirname, `../../../app/containers/${comp}/sagas.js`), fs.F_OK);
+    fs.accessSync(`app/containers/${comp}/sagas.js`, fs.F_OK);
     return true;
   } catch (e) {
     return false;
@@ -25,7 +24,7 @@ function sagasExists(comp) {
 
 function trimTemplateFile(template) {
   // Loads the template file and trims the whitespace and then returns the content as a string.
-  return fs.readFileSync(path.join(__dirname, `./${template}`), 'utf8').replace(/\s*$/, '');
+  return fs.readFileSync(`internals/generators/route/${template}`, 'utf8').replace(/\s*$/, '');
 }
 
 module.exports = {

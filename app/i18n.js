@@ -5,35 +5,26 @@
  *
  */
 import { addLocaleData } from 'react-intl';
+
 import enLocaleData from 'react-intl/locale-data/en';
-import deLocaleData from 'react-intl/locale-data/de';
-
-import { DEFAULT_LOCALE } from '../app/containers/App/constants';
-
-import enTranslationMessages from './translations/en.json';
-import deTranslationMessages from './translations/de.json';
-
-addLocaleData(enLocaleData);
-addLocaleData(deLocaleData);
 
 export const appLocales = [
   'en',
-  'de',
 ];
 
-export const formatTranslationMessages = (locale, messages) => {
-  const defaultFormattedMessages = locale !== DEFAULT_LOCALE
-    ? formatTranslationMessages(DEFAULT_LOCALE, enTranslationMessages)
-    : {};
-  return Object.keys(messages).reduce((formattedMessages, key) => {
-    const formattedMessage = !messages[key] && locale !== DEFAULT_LOCALE
-      ? defaultFormattedMessages[key]
-      : messages[key];
-    return Object.assign(formattedMessages, { [key]: formattedMessage });
-  }, {});
+import enTranslationMessages from './translations/en.json';
+
+addLocaleData(enLocaleData);
+
+const formatTranslationMessages = (messages) => {
+  const formattedMessages = {};
+  for (const message of messages) {
+    formattedMessages[message.id] = message.message || message.defaultMessage;
+  }
+
+  return formattedMessages;
 };
 
 export const translationMessages = {
-  en: formatTranslationMessages('en', enTranslationMessages),
-  de: formatTranslationMessages('de', deTranslationMessages),
+  en: formatTranslationMessages(enTranslationMessages),
 };
