@@ -5,10 +5,10 @@ WORKDIR /consert
 RUN npm install
 COPY . .
 
-RUN npm run build:dll
+RUN npm run build
 
 EXPOSE 3000
 
 VOLUME /consert
 
-CMD ["npm","run","start:production"]
+CMD ["npm","run","build"]
