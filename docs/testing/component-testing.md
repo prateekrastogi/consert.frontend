@@ -97,7 +97,7 @@ Lets test our `<Button>` component! We're going to assess three things: First,
 that it renders a HTML `<button>` tag, second that it renders its children we
 pass it and third that handles clicks!
 
-This is our Jest setup:
+This is our Mocha setup:
 
 ```javascript
 describe('<Button />', () => {
@@ -119,7 +119,7 @@ it('renders a <button>', () => {
   );
   expect(
     renderedComponent.find("button").node
-  ).toBeDefined();
+  ).toExist();
 });
 ```
 
@@ -150,7 +150,7 @@ see that our Spy was called:
 
 ```javascript
 it('handles clicks', () => {
-  const onClickSpy = jest.fn();
+  const onClickSpy = expect.createSpy();
   const renderedComponent = shallow(<Button onClick={onClickSpy} />);
   renderedComponent.find('button').simulate('click');
   expect(onClickSpy).toHaveBeenCalled();

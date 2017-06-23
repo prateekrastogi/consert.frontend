@@ -14,12 +14,12 @@ const select{{ properCase name }}Domain = () => (state) => state.get('{{ camelCa
  * Default selector used by {{ properCase name }}
  */
 
-const makeSelect{{ properCase name }} = () => createSelector(
+const select{{ properCase name }} = () => createSelector(
   select{{ properCase name }}Domain(),
   (substate) => substate.toJS()
 );
 
-export default makeSelect{{ properCase name }};
+export default select{{ properCase name }};
 export {
   select{{ properCase name }}Domain,
 };

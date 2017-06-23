@@ -1,5 +1,5 @@
-// makeSelectLocationState expects a plain JS object for the routing state
-const makeSelectLocationState = () => {
+// selectLocationState expects a plain JS object for the routing state
+const selectLocationState = () => {
   let prevRoutingState;
   let prevRoutingStateJS;
 
@@ -16,5 +16,5 @@ const makeSelectLocationState = () => {
 };
 
 export {
-  makeSelectLocationState,
+  selectLocationState,
 };

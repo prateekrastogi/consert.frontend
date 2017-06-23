@@ -4,26 +4,30 @@
  *
  */
 
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 {{#if wantHeaders}}
 import Helmet from 'react-helmet';
 {{/if}}
+{{#if wantActionsAndReducer}}
+import select{{properCase name}} from './selectors';
+{{/if}}
 {{#if wantMessages}}
 import { FormattedMessage } from 'react-intl';
-{{/if}}
-{{#if wantActionsAndReducer}}
-import { createStructuredSelector } from 'reselect';
-import makeSelect{{properCase name}} from './selectors';
-{{/if}}
-{{#if wantMessages}}
 import messages from './messages';
 {{/if}}
+{{#if wantCSS}}
+import styles from './styles.css';
+{{/if}}
 
-export class {{ properCase name }} extends React.{{{ component }}} { // eslint-disable-line react/prefer-stateless-function
+export class {{ properCase name }} extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
+      {{#if wantCSS}}
+      <div className={{curly true}}styles.{{ camelCase name }}{{curly}}>
+      {{else}}
       <div>
+      {{/if}}
       {{#if wantHeaders}}
         <Helmet
           title="{{properCase name}}"
@@ -40,14 +44,8 @@ export class {{ properCase name }} extends React.{{{ component }}} { // eslint-d
   }
 }
 
-{{ properCase name }}.propTypes = {
-  dispatch: PropTypes.func.isRequired,
-};
-
 {{#if wantActionsAndReducer}}
-const mapStateToProps = createStructuredSelector({
-  {{name}}: makeSelect{{properCase name}}(),
-});
+const mapStateToProps = select{{properCase name}}();
 {{/if}}
 
 function mapDispatchToProps(dispatch) {

@@ -60,21 +60,17 @@ accessible anywhere! Changes in the application code will be hot-reloaded.
 ### Production
 
 ```Shell
-npm run start:production
+npm run start:prod
 ```
 
- * Runs tests (see `npm test`)
- * Builds your app (see `npm run build`)
- * Starts the production server (see `npm run start:prod`)
-
-The app is built for optimal performance: assets are
+Starts the production server, configured for optimal performance: assets are
 minified and served gzipped.
 
-### Host and Port
+### Port
 
-To change the host and/or port the app is accessible at, pass the `--host` and/or `--port` option to the command
-with `--`. E.g. to make the app visible at `my-local-hostname:5000`, run the following:
-`npm start -- --host my-local-hostname --port 5000`
+To change the port the app is accessible at pass the `--port` option to the command
+with `--`. E.g. to make the app visible at `localhost:5000`, run the following:
+`npm start -- --port 5000`
 
 ## Building
 
@@ -82,9 +78,8 @@ with `--`. E.g. to make the app visible at `my-local-hostname:5000`, run the fol
 npm run build
 ```
 
-Preps your app for deployment (does not run tests). Optimizes and minifies all files, piping them to the `build` folder.
-
-Upload the contents of `build` to your web server to
+Preps your app for deployment. Optimizes and minifies all files, piping them to
+a folder called `build`. Upload the contents of `build` to your web server to
 see your work live!
 
 ## Testing
@@ -95,17 +90,42 @@ about our testing setup!
 ## Unit testing
 
 ```Shell
-npm test
+npm run test
 ```
 
-Tests your application with the unit tests specified in the `**/tests/*.js` files
+Tests your application with the unit tests specified in the `*test.js` files
 throughout the application.  
-All the `test` commands allow an optional `-- [string]` argument to filter
-the tests run by Jest. Useful if you need to run a specific test only.
+All the `test` commands allow an optional `-- --grep string` argument to filter
+the tests ran by Karma. Useful if you need to run a specific test only.
 
 ```Shell
 # Run only the Button component tests
-npm test -- Button
+npm run test:watch -- --grep Button
+```
+
+### Browsers
+
+To choose the browser to run your unit tests in (Chrome by default), run one of
+the following commands:
+
+#### Firefox
+
+```Shell
+npm run test:firefox
+```
+
+#### Safari
+
+```Shell
+npm run test:safari
+```
+
+#### Internet Explorer
+
+*Windows only!*
+
+```Shell
+npm run test:ie
 ```
 
 ### Watching
@@ -114,7 +134,7 @@ npm test -- Button
 npm run test:watch
 ```
 
-Watches changes to your application and re-runs tests whenever a file changes.
+Watches changes to your application and reruns tests whenever a file changes.
 
 ### Remote testing
 
@@ -123,6 +143,16 @@ npm run start:tunnel
 ```
 Starts the development server and tunnels it with `ngrok`, making the website
 available on the entire world. Useful for testing on different devices in different locations!
+
+### Performance testing
+
+```Shell
+npm run pagespeed
+```
+
+With the remote server running (i.e. while `npm run start:prod` is running in
+another terminal session), enter this command to run Google PageSpeed Insights
+and get a performance check right in your terminal!
 
 ### Dependency size test
 
@@ -141,5 +171,20 @@ about the bundle size.
 npm run lint
 ```
 
-Lints your JavaScript.
+Lints your JavaScript and CSS.
 
+### JavaScript
+
+```Shell
+npm run lint:js
+```
+
+Only lints your JavaScript.
+
+### CSS
+
+```Shell
+npm run lint:css
+```
+
+Only lints your CSS.

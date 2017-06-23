@@ -1,14 +1,15 @@
 # CSS
 
-This boilerplate uses [`styled-components`](https://github.com/styled-components/styled-components)
-allowing you to write your CSS in your JavaScript,
-removing the mapping between styles and components.
+This boilerplate uses PostCSS as a CSS preprocessor with a few utility plugins
+to make it "batteries included".
 
-`styled-components` let's us embrace component encapsulation while sanitize.css gives us
+CSS Modules lets us embrace component encapsulation while sanitize.css gives us
 data-driven cross-browser normalisation.
 
 Learn more:
 
-- [`styled-components`](styled-components.md)
+- [PostCSS](postcss.md)
+- [CSS Modules](css-modules.md)
 - [sanitize.css](sanitize.md)
+- [stylelint.css](stylelint.md)
 - [Using Sass](sass.md)

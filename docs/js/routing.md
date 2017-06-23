@@ -20,7 +20,7 @@ This is what a standard (generated) route looks like for a container:
   name: 'home',
   getComponent(nextState, cb) {
     const importModules = Promise.all([
-      import('containers/HomePage')
+      System.import('containers/HomePage')
     ]);
 
     const renderRoute = loadModule(cb);
@@ -54,7 +54,7 @@ For example, if you have a route called `about` at `/about` and want to make a c
   name: 'about',
   getComponent(nextState, cb) {
     const importModules = Promise.all([
-      import('containers/AboutPage'),
+      System.import('containers/AboutPage'),
     ]);
 
     const renderRoute = loadModule(cb);
@@ -71,7 +71,7 @@ For example, if you have a route called `about` at `/about` and want to make a c
       name: 'team',
       getComponent(nextState, cb) {
         const importModules = Promise.all([
-          import('containers/TeamPage'),
+          System.import('containers/TeamPage'),
         ]);
 
         const renderRoute = loadModule(cb);
@@ -87,45 +87,6 @@ For example, if you have a route called `about` at `/about` and want to make a c
 }
 ```
 
-## Index routes
-
-To add an index route, use the following pattern:
-
-```JS
-{
-  path: '/',
-  name: 'home',
-  getComponent(nextState, cb) {
-    const importModules = Promise.all([
-      import('containers/HomePage')
-    ]);
-
-    const renderRoute = loadModule(cb);
-
-    importModules.then(([component]) => {
-      renderRoute(component);
-    });
-
-    importModules.catch(errorLoading);
-  },
-  indexRoute: {
-    getComponent(partialNextState, cb) {
-      const importModules = Promise.all([
-        import('containers/HomeView')
-      ]);
-
-      const renderRoute = loadModule(cb);
-
-      importModules.then(([component]) => {
-        renderRoute(component);
-      });
-
-      importModules.catch(errorLoading);
-    },
-  },
-}
-```
-
 ## Dynamic routes
 
 To go to a dynamic route such as 'post/:slug' eg 'post/cool-new-post', firstly add the route to your `routes.js`, as per documentation:
@@ -135,9 +96,9 @@ path: '/posts/:slug',
 name: 'post',
 getComponent(nextState, cb) {
  const importModules = Promise.all([
-   import('containers/Post/reducer'),
-   import('containers/Post/sagas'),
-   import('containers/Post'),
+   System.import('containers/Post/reducer'),
+   System.import('containers/Post/sagas'),
+   System.import('containers/Post'),
  ]);
 
  const renderRoute = loadModule(cb);

@@ -1,17 +1,7 @@
 /**
  * Language Generator
  */
-const fs = require('fs');
 const exec = require('child_process').exec;
-
-function languageIsSupported(language) {
-  try {
-    fs.accessSync(`app/translations/${language}.json`, fs.F_OK);
-    return true;
-  } catch (e) {
-    return false;
-  }
-}
 
 module.exports = {
   description: 'Add a language',
@@ -22,7 +12,7 @@ module.exports = {
     default: 'fr',
     validate: (value) => {
       if ((/.+/).test(value) && value.length === 2) {
-        return languageIsSupported(value) ? `The language "${value}" is already supported.` : true;
+        return true;
       }
 
       return '2 character language specifier is required';
@@ -40,7 +30,7 @@ module.exports = {
     actions.push({
       type: 'modify',
       path: '../../app/i18n.js',
-      pattern: /(\s+'[a-z]+',\n)(?!.*\s+'[a-z]+',)/g,
+      pattern: /([\n\s'[a-z]+',)(?!.*[\n\s'[a-z]+',)/g,
       templateFile: './language/app-locale.hbs',
     });
     actions.push({
@@ -58,7 +48,7 @@ module.exports = {
     actions.push({
       type: 'modify',
       path: '../../app/i18n.js',
-      pattern: /([a-z]+:\sformatTranslationMessages\('[a-z]+',\s[a-z]+TranslationMessages\),\n)(?!.*[a-z]+:\sformatTranslationMessages\('[a-z]+',\s[a-z]+TranslationMessages\),)/g,
+      pattern: /([a-z]+:\sformatTranslationMessages\([a-z]+TranslationMessages\),\n)(?!.*[a-z]+:\sformatTranslationMessages\([a-z]+TranslationMessages\),)/g,
       templateFile: './language/format-translation-messages.hbs',
     });
     actions.push({
@@ -82,7 +72,6 @@ module.exports = {
           }
           process.stdout.write(result);
         });
-        return 'modify translation messages';
       }
     );
 

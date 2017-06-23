@@ -13,7 +13,9 @@
 
 import React from 'react';
 
-export default class App extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+import styles from './styles.css';
+
+export default class App extends React.Component { // eslint-disable-line react/prefer-stateless-function
 
   static propTypes = {
     children: React.PropTypes.node,
@@ -21,7 +23,7 @@ export default class App extends React.PureComponent { // eslint-disable-line re
 
   render() {
     return (
-      <div>
+      <div className={styles.container}>
         {React.Children.toArray(this.props.children)}
       </div>
     );

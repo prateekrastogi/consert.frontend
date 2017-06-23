@@ -1,28 +1,6 @@
 # Frequently Asked Questions
 
-## Table of Contents
-
-- [Where are Babel and ESLint configured?](#where-are-babel-and-eslint-configured)
-- [Where are the files coming from when I run `npm start`?](#where-are-the-files-coming-from-when-i-run-npm-start)
-- [How do I fix `Error: listen EADDRINUSE 127.0.0.1:3000`?](#how-do-i-fix-error-listen-eaddrinuse-1270013000)
-  - [OS X / Linux](#os-x-linux)
-  - [Windows](#windows)
-- [Issue with local caching when running in production mode (F5 / ctrl+F5 / cmd+r weird behavior)](#issue-with-local-caching-when-running-in-production-mode-f5--ctrlf5--cmdr-weird-behavior)
-  - [Quick fix on your local browser:](#quick-fix-on-your-local-browser)
-  - [Full in-depth explanation](#full-in-depth-explanation)
-- [Local webfonts not working for development](#local-webfonts-not-working-for-development)
-- [Non-route containers](#non-route-containers)
-  - [Where do I put the reducer?](#where-do-i-put-the-reducer)
-  - [How do I run the saga?](#how-do-i-run-the-saga)
-- [Using this boilerplate with WebStorm](#using-this-boilerplate-with-webstorm)
-  - [Troubleshooting](#troubleshooting)
-  - [Enable ESLint](#enable-eslint)
-- [Use CI with bitbucket pipelines](#use-ci-with-bitbucket-pipelines)
-- [I'm using Node v0.12 and the server doesn't work?](#im-using-node-v012-and-the-server-doesnt-work)
-- [How to keep my project up-to-date with `react-boilerplate`?](#how-to-keep-my-project-up-to-date-with-react-boilerplate)
-- [Have another question?](#have-another-question)
-
-## Where are Babel and ESLint configured?
+## Where are Babel, ESLint and stylelint configured?
 
 In package.json
 
@@ -47,7 +25,6 @@ The fix is to kill the process and rerun `npm start`.
     > ```Shell
     > janedoe    29811  49.1  2.1  3394936 356956 s004  S+    4:45pm   2:40.07 node server
     > ```
-    > Note: If nothing is listed, you can try `lsof -i tcp:3000` 
 
 1. Then run
     ```Shell
@@ -78,20 +55,6 @@ The fix is to kill the process and rerun `npm start`.
     ```
     > e.g. given the output from the example above, `YOUR_PID` is `28344`, hence
     that would mean you would run `taskkill /F /PID 28344`
-
-## Issue with local caching when running in production mode (F5 / ctrl+F5 / cmd+r weird behavior)
-
-Your production site isn't working? You update the code and nothing changes? It drives you insane?
-
-#### Quick fix on your local browser:
-
-To fix it on your local browser, just do the following. (Suited when you're testing the production mode locally)
-
-`Chrome dev tools > Application > Clear Storage > Clear site data` *(Chrome)*
-
-#### Full in-depth explanation
-
-Read more at https://github.com/NekR/offline-plugin/blob/master/docs/updates.md
 
 ## Local webfonts not working for development
 
@@ -178,7 +141,7 @@ WebStorm is a powerful IDE, and why not also use it as debugger tool? Here is th
 
 1.  [Install JetBrain Chrome Extension](https://chrome.google.com/webstore/detail/jetbrains-ide-support/hmhgeddbohgjknpmjagkdomcpobmllji)
 2.  [Setting up the PORT](https://www.jetbrains.com/help/webstorm/2016.1/using-jetbrains-chrome-extension.html)
-3.  Change WebPack devtool config to `source-map` [(This line)](https://github.com/react-boilerplate/react-boilerplate/blob/56eb5a0ec4aa691169ef427f3a0122fde5a5aa24/internals/webpack/webpack.dev.babel.js#L65)
+3.  Change WebPack devtool config to `source-map` [(This line)](https://github.com/mxstbr/react-boilerplate/blob/56eb5a0ec4aa691169ef427f3a0122fde5a5aa24/internals/webpack/webpack.dev.babel.js#L65)
 4.  Run web server (`npm run start`)
 5.  Create Run Configuration (Run > Edit Configurations)
 6.  Add new `JavaScript Debug`
@@ -226,32 +189,14 @@ pipelines:
 ## I'm using Node v0.12 and the server doesn't work?
 
 We settled on supporting the last three major Node.js versions for the boilerplate – at the moment
-of this writing those are v5, v6 and v7. We **highly recommend upgrading to a newer Node.js version**!
+of this writing those are v4, v5 and v6. We **highly recommend upgrading to a newer Node.js version**!
 
 If you _have_ to use Node.js 0.12, you can hack around the server not running by using `babel-cli` to
 run the server: `npm install babel-cli`, and then replace all instances of `node server` in the `"scripts"`
 in the `package.json` with `babel server`!
 
-## How to keep my project up-to-date with `react-boilerplate`?
-
-While it's possible to keep your project up-to-date or "in sync" with `react-boilerplate`, it's usually
-very difficult and therefore ***at your own risk*** and not recommend. You should not need to do it either, as
-every version you use will be amazing! There is a long term goal to make this much easier but no ETA at the moment.
-
-## How to turn off Webpack performance warnings after production build?
-
-Webpack recommends having those performance hints turned off in development but to keep them on in production. If you still want to disable them, add the next lines to the config in `webpack.prod.babel.js`:
-  
-```js
-  performance: {
-    hints: false
-  }
-```
-You can find more information about the `performance` option (how to change maximum allowed size of a generated file, how to exclude some files from being checked and so on) in the [Webpack documentation](https://webpack.js.org/configuration/performance/).
-
-
 ## Have another question?
 
-Submit an [issue](https://github.com/react-boilerplate/react-boilerplate/issues),
+Submit an [issue](https://github.com/mxstbr/react-boilerplate/issues),
 hop onto the [Gitter channel](https://gitter.im/mxstbr/react-boilerplate)
 or contact Max direct on [twitter](https://twitter.com/mxstbr)!

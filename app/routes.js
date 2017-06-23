@@ -22,7 +22,7 @@ export default function createRoutes(store) {
       name: 'home',
       getComponent(nextState, cb) {
         const importModules = Promise.all([
-          import('containers/HomePage'),
+          System.import('containers/HomePage'),
         ]);
 
         const renderRoute = loadModule(cb);
@@ -34,10 +34,53 @@ export default function createRoutes(store) {
         importModules.catch(errorLoading);
       },
     }, {
+      path: '/login',
+      name: 'loginPage',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          System.import('containers/LoginPage/reducer'),
+          System.import('containers/LoginPage/sagas'),
+          System.import('containers/LoginPage'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([reducer, sagas, component]) => {
+          injectReducer('loginPage', reducer.default);
+          injectSagas(sagas.default);
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    }, {
+      childRoutes: [
+        {
+          path: '/auth/success',
+          name: 'authSuccess',
+          getComponent(nextState, cb) {
+            Promise.all([
+              System.import('containers/AuthSuccess'),
+            ]).then(loadModule(cb))
+              .catch(errorLoading);
+          },
+        },
+        {
+          path: '/auth/failure',
+          name: 'authFailure',
+          getComponent(nextState, cb) {
+            Promise.all([
+              System.import('containers/AuthFailure'),
+            ]).then(loadModule(cb))
+              .catch(errorLoading);
+          },
+        },
+      ],
+    }, {
       path: '*',
       name: 'notfound',
       getComponent(nextState, cb) {
-        import('containers/NotFoundPage')
+        System.import('containers/NotFoundPage')
           .then(loadModule(cb))
           .catch(errorLoading);
       },
