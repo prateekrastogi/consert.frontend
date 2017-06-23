@@ -4,6 +4,7 @@
 const express = require('express')
 const next = require('next')
 const {join} = require('path')
+var proxy = require('http-proxy-middleware')
 
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({dev})
@@ -32,10 +33,8 @@ const rootStaticFiles = [
 app.prepare().then(() => {
   const server = express()
 
-  redirects.forEach(({from, to, type = 301, method = 'get'}) => {
-    server[method](from, (req, res) => {
-      res.redirect(type, to)
-    })
+  redirects.forEach(({from, to}) => {
+    app.use(from, proxy({target: to, changeOrigin: true}))
   })
 
   const options = {root: join(__dirname, 'static')}
