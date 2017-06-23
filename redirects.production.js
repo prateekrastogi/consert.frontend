@@ -1,0 +1,9 @@
+/**
+ * Created by rprat on 22-06-2017.
+ */
+module.exports = [
+  {
+    from: '/auth/spotify',
+    to: 'http://accounts.consert.live/auth/spotify'
+  }
+]
