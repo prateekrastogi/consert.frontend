@@ -1,9 +1,1 @@
-# Don't check auto-generated stuff into git
-coverage
-node_modules
-stats.json
-
-# Cruft
-.DS_Store
-npm-debug.log
-.idea
+# Created by .ignore support plugin (hsz.mobi)
