@@ -4,6 +4,6 @@
 module.exports = [
   {
     from: '/auth/spotify',
-    to: 'http://localhost:3100/auth/spotify'
+    to: 'http://localhost:3100'
   }
 ]

@@ -4,7 +4,7 @@
 const express = require('express')
 const next = require('next')
 const {join} = require('path')
-var proxy = require('http-proxy-middleware')
+const proxy = require('http-proxy-middleware')
 
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({dev})
@@ -34,7 +34,7 @@ app.prepare().then(() => {
   const server = express()
 
   redirects.forEach(({from, to}) => {
-    app.use(from, proxy({target: to, changeOrigin: true}))
+    server.use(from, proxy({ target: to, changeOrigin: false }))
   })
 
   const options = {root: join(__dirname, 'static')}
