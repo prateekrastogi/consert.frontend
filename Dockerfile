@@ -5,7 +5,7 @@ RUN mkdir -p /frontend
 WORKDIR /frontend
 
 # Bundle app source
-COPY package.json package-lock.json server.js redirects.js redirects.production.js /frontend/
+COPY package.json package-lock.json server.js redirects.production.js /frontend/
 COPY /pages /frontend/pages
 COPY /static /frontend/static
 COPY /lib /frontend/lib
