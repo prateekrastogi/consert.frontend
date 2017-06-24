@@ -4,6 +4,6 @@
 module.exports = [
   {
     from: '/auth/spotify',
-    to: 'http://backend:3100'
+    to: 'http://accounts.consert.live'
   }
 ]
