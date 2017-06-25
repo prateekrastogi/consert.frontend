@@ -34,7 +34,7 @@ app.prepare().then(() => {
   const server = express()
 
   redirects.forEach(({from, to}) => {
-    server.use(from, proxy({ target: to, changeOrigin: false }))
+    server.use(from, proxy({ target: to, changeOrigin: true }))
   })
 
   const options = {root: join(__dirname, 'static')}
