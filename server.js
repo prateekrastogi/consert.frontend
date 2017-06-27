@@ -3,7 +3,8 @@
  */
 const express = require('express')
 const next = require('next')
-const {join} = require('path')
+const path = require('path')
+var favicon = require('serve-favicon')
 
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({dev})
@@ -25,10 +26,6 @@ try {
   process.exit(1) // fatal
 }
 
-const rootStaticFiles = [
-  '/favicon.png'
-]
-
 app.prepare().then(() => {
   const server = express()
 
@@ -38,12 +35,7 @@ app.prepare().then(() => {
     })
   })
 
-  const options = {root: join(__dirname, 'static')}
-  rootStaticFiles.forEach(file => {
-    server.get(file, (req, res) => {
-      res.sendFile(file.slice(1), options)
-    })
-  })
+  server.use(favicon(path.join(__dirname, 'static', 'favicon.png')))
 
   server.get('*', (req, res) => {
     return handle(req, res)
