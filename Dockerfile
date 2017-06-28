@@ -18,4 +18,6 @@ RUN npm run build
 #Finally setting container parameters
 ENV NODE_ENV 'production'
 EXPOSE 3000
+
+#Container Start-up
 CMD [ "npm", "start" ]
