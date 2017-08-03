@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "express": "^4.15.3",
-    "graphql": "^0.9.3",
+    "graphql": "^0.10.5",
     "isomorphic-fetch": "^2.2.1",
     "next": "latest",
     "react": "^15.5.4",
@@ -16,7 +16,7 @@
     "react-dom": "^15.5.4",
     "serve-favicon": "^2.4.3",
     "socket.io-client": "^2.0.3",
-    "subscriptions-transport-ws": "^0.7.3"
+    "subscriptions-transport-ws": "^0.8.2"
   },
   "browser": {
     "express": false,
