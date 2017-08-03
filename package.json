@@ -18,6 +18,10 @@
     "socket.io-client": "^2.0.3",
     "subscriptions-transport-ws": "^0.7.3"
   },
+  "browser": {
+    "express": false,
+    "serve-favicon": false
+  },
   "author": "Prateek Rastogi",
   "devDependencies": {
     "eslint": "^4.0.0",
