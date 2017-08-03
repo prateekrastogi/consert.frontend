@@ -9,17 +9,15 @@ var favicon = require('serve-favicon')
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({dev})
 const handle = app.getRequestHandler()
-console.log(process.env.NODE_ENV)
+
 let redirects
 try {
   switch (process.env.NODE_ENV) {
     case 'production' :
       redirects = require('./redirects.' + process.env.NODE_ENV)
-      console.log(redirects)
       break
     default:
       redirects = require('./redirects')
-      console.log(redirects)
   }
 } catch (err) {
   console.trace(err)
