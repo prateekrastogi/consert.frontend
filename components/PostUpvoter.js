@@ -1,11 +1,12 @@
 import React from 'react'
 import { gql, graphql } from 'react-apollo'
+import Button from 'react-uwp/Button'
 
 function PostUpvoter ({ upvote, votes, id }) {
   return (
-    <button onClick={() => upvote(id, votes + 1)}>
+    <Button onClick={() => upvote(id, votes + 1)}>
       {votes}
-    </button>
+    </Button>
   )
 }
 
