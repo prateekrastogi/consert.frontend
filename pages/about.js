@@ -1,8 +1,8 @@
 import App from '../components/App'
 import Header from '../components/Header'
-import withData from '../lib/withData'
+import withDataAndRootTheme from '../lib/withDataAndRootTheme'
 
-export default withData((props) => (
+export default withDataAndRootTheme((props) => (
   <App>
     <Header pathname={props.url.pathname} />
     <article>
