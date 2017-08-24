@@ -1,6 +1,6 @@
 import App from '../components/App'
 import Header from '../components/Header'
-import withDataAndRootTheme from '../lib/withDataAndRootTheme'
+import withDataAndRootTheme from '../lib/withData'
 
 export default withDataAndRootTheme((props) => (
   <App>
