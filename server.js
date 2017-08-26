@@ -4,7 +4,7 @@
 const express = require('express')
 const next = require('next')
 const path = require('path')
-var favicon = require('serve-favicon')
+const favicon = require('serve-favicon')
 
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({dev})
