@@ -4,11 +4,9 @@
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
-    "start": "node server.js",
-    "lint:css": "stylelint './components/**/*.js'"
+    "start": "node server.js"
   },
   "dependencies": {
-    "babel-plugin-styled-components": "^1.1.7",
     "express": "^4.15.4",
     "graphql": "^0.10.5",
     "isomorphic-fetch": "^2.2.1",
@@ -19,7 +17,6 @@
     "react-dom": "^15.6.1",
     "serve-favicon": "^2.4.3",
     "socket.io-client": "^2.0.3",
-    "styled-components": "^2.1.2",
     "subscriptions-transport-ws": "^0.8.2"
   },
   "browser": {
@@ -35,9 +32,6 @@
     "eslint-plugin-node": "^5.1.1",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-react": "^7.3.0",
-    "eslint-plugin-standard": "^3.0.1",
-    "stylelint": "^8.0.0",
-    "stylelint-config-standard": "^17.0.0",
-    "stylelint-processor-styled-components": "^0.3.0"
+    "eslint-plugin-standard": "^3.0.1"
   }
 }
