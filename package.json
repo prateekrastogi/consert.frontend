@@ -10,7 +10,7 @@
     "express": "^4.15.4",
     "graphql": "^0.10.5",
     "isomorphic-fetch": "^2.2.1",
-    "next": "latest",
+    "next": "^3.0.6",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-apollo": "^1.4.15",
