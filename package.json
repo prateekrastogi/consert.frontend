@@ -15,7 +15,7 @@
     "react": "^15.6.1",
     "react-apollo": "^1.4.15",
     "react-dom": "^15.6.1",
-    "semantic-ui-react": "^0.71.5",
+    "semantic-ui-react": "0.71.5",
     "serve-favicon": "^2.4.3",
     "socket.io-client": "^2.0.3",
     "subscriptions-transport-ws": "^0.8.2"
@@ -36,6 +36,9 @@
     "eslint-plugin-standard": "^3.0.1",
     "semantic-ui": "^2.2.13",
     "stylelint": "^8.0.0",
-    "stylelint-config-recommended": "^1.0.0"
+    "stylelint-config-recommended": "^1.0.0",
+    "babel-plugin-module-resolver": "2.7.1",
+    "babel-plugin-wrap-in-js": "^1.1.1",
+    "raw-loader": "^0.5.1"
   }
 }
