@@ -1,6 +1,6 @@
-import withDataAndRootTheme from '../lib/withData'
+import withData from '../lib/withData'
 
-export default withDataAndRootTheme((props) => (
+export default withData((props) => (
 
   <article>
     <h1>The Idea Behind This Example</h1>
