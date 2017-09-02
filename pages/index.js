@@ -1,13 +1,16 @@
 import React from 'react'
 import withData from '../lib/withData'
 import App from '../components/App'
-import { Button } from 'semantic-ui-react'
+import { Sidebar, Menu } from 'semantic-ui-react'
 
 class Index extends React.Component {
   render () {
     return (<App>
-      <Button> echo</Button>
-    </App>)
+      <Sidebar as={Menu} animation='overlay' width='thin' visible icon='labeled' vertical inverted>
+        <Menu.Item name='' />
+      </Sidebar>
+    </App>
+    )
   }
 }
 
