@@ -9,9 +9,9 @@
   },
   "dependencies": {
     "express": "^4.15.4",
-    "graphql": "^0.11.1",
+    "graphql": "^0.11.2",
     "isomorphic-fetch": "^2.2.1",
-    "next": "^3.0.6",
+    "next": "^3.2.1",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-apollo": "^1.4.15",
@@ -27,7 +27,7 @@
   },
   "author": "Prateek Rastogi",
   "devDependencies": {
-    "eslint": "^4.5.0",
+    "eslint": "^4.6.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-config-standard-jsx": "^4.0.2",
     "eslint-plugin-import": "^2.7.0",
