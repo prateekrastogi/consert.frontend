@@ -27,6 +27,9 @@
   },
   "author": "Prateek Rastogi",
   "devDependencies": {
+    "babel-plugin-inline-dotenv": "^1.1.1",
+    "babel-plugin-module-resolver": "2.7.1",
+    "babel-plugin-wrap-in-js": "^1.1.1",
     "eslint": "^4.6.1",
     "eslint-config-standard": "^10.2.1",
     "eslint-config-standard-jsx": "^4.0.2",
@@ -35,11 +38,9 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-react": "^7.3.0",
     "eslint-plugin-standard": "^3.0.1",
+    "raw-loader": "^0.5.1",
     "semantic-ui": "^2.2.13",
     "stylelint": "^8.1.1",
-    "stylelint-config-recommended": "^1.0.0",
-    "babel-plugin-module-resolver": "2.7.1",
-    "babel-plugin-wrap-in-js": "^1.1.1",
-    "raw-loader": "^0.5.1"
+    "stylelint-config-recommended": "^1.0.0"
   }
 }

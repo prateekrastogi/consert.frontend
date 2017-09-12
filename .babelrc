@@ -13,8 +13,23 @@
       {
         "extensions": ["css$"]
       }
+    ],
+    [
+      "inline-dotenv"
     ]
   ],
+  "env": {
+    "production": {
+      "plugins": [
+        [
+          "inline-dotenv",
+          {
+            "path": "./.env.production"
+          }
+        ]
+      ]
+    }
+  },
   "presets": [
     "next/babel"
   ],

@@ -3,6 +3,7 @@ import withData from '../lib/withData'
 function About (props) {
   return (
     <article>
+      <div>{process.env.FUST}</div>
       <h1>The Idea Behind This Example</h1>
       <p>
         <a href='http://dev.apollodata.com'>Apollo</a> is a GraphQL client that allows you to easily query the exact
