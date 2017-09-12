@@ -26,7 +26,7 @@ try {
 
 app.prepare().then(() => {
   const server = express()
-
+  // Don't  refactor redirects into .env.* files as we can have multiple redirect routes. Thus, producing iteration issues.
   redirects.forEach(({from, to, type = 301, method = 'get'}) => {
     server[method](from, (req, res) => {
       res.redirect(type, to)
