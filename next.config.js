@@ -1,5 +1,5 @@
 module.exports = {
-  webpack: (config, {dev}) => {
+  webpack: (config) => {
     config.module.rules.push(
       {
         test: /\.(css)/,
