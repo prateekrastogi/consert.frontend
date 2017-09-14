@@ -1,4 +1,3 @@
-const {BundleAnalyzerPlugin} = require('webpack-bundle-analyzer')
 const {ANALYZE} = process.env
 
 module.exports = {
@@ -18,6 +17,8 @@ module.exports = {
     )
 
     if (ANALYZE) {
+      const {BundleAnalyzerPlugin} = require('webpack-bundle-analyzer')
+
       config.plugins.push(new BundleAnalyzerPlugin({
         analyzerMode: 'server',
         analyzerPort: 8888,
