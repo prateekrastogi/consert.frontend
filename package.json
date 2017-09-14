@@ -5,7 +5,8 @@
     "dev": "node server.js",
     "build": "next build",
     "start": "node server.js",
-    "eslint-fix": "eslint components/* pages/* --fix"
+    "eslint-fix": "eslint components/* pages/* --fix",
+    "analyze": "cross-env ANALYZE=1 next build"
   },
   "dependencies": {
     "express": "^4.15.4",
@@ -30,6 +31,7 @@
     "babel-plugin-inline-dotenv": "^1.1.1",
     "babel-plugin-module-resolver": "2.7.1",
     "babel-plugin-wrap-in-js": "^1.1.1",
+    "cross-env": "^5.0.5",
     "eslint": "^4.6.1",
     "eslint-config-standard": "^10.2.1",
     "eslint-config-standard-jsx": "^4.0.2",
@@ -41,6 +43,7 @@
     "raw-loader": "^0.5.1",
     "semantic-ui": "^2.2.13",
     "stylelint": "^8.1.1",
-    "stylelint-config-recommended": "^1.0.0"
+    "stylelint-config-recommended": "^1.0.0",
+    "webpack-bundle-analyzer": "^2.9.0"
   }
 }
