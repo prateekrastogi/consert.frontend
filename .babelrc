@@ -15,7 +15,10 @@
       }
     ],
     [
-      "inline-dotenv"
+      "inline-dotenv",
+      {
+        "path": "./.env.config"
+      }
     ]
   ],
   "env": {
@@ -24,7 +27,7 @@
         [
           "inline-dotenv",
           {
-            "path": "./.env.production"
+            "path": "./.env.production.config"
           }
         ]
       ]
