@@ -15,6 +15,7 @@
     "babel-plugin-wrap-in-js": "^1.1.1",
     "cross-env": "^5.0.5",
     "express": "^4.15.4",
+    "fingerprintjs2": "^1.5.1",
     "graphql": "^0.11.3",
     "isomorphic-fetch": "^2.2.1",
     "next": "^3.2.2",
@@ -23,10 +24,11 @@
     "react": "^15.6.1",
     "react-apollo": "^1.4.15",
     "react-dom": "^15.6.1",
-    "semantic-ui-react": "^0.73.0",
-    "serve-favicon": "^2.4.3",
+    "semantic-ui-react": "^0.73.1",
+    "serve-favicon": "^2.4.4",
     "socket.io-client": "^2.0.3",
-    "subscriptions-transport-ws": "^0.8.3"
+    "subscriptions-transport-ws": "^0.9.0",
+    "universal-cookie": "^2.1.0"
   },
   "browser": {
     "express": false,
@@ -38,7 +40,7 @@
     "cross-env": false
   },
   "devDependencies": {
-    "eslint": "^4.6.1",
+    "eslint": "^4.7.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-config-standard-jsx": "^4.0.2",
     "eslint-plugin-import": "^2.7.0",
