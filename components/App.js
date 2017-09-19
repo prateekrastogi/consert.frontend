@@ -1,6 +1,7 @@
 import React from 'react'
 import stylesheet from 'styles/semantic.min.css'
 import Head from 'next/head'
+import Cookies from 'universal-cookie'
 
 export default class App extends React.Component {
   render () {
@@ -29,5 +30,9 @@ export default class App extends React.Component {
 
       </main>
     )
+  }
+
+  componentDidMount () {
+
   }
 }
