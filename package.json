@@ -10,7 +10,6 @@
     "analyze": "cross-env ANALYZE=1 next build"
   },
   "dependencies": {
-    "add-graphql-subscriptions": "^1.0.1",
     "babel-plugin-inline-dotenv": "^1.1.1",
     "babel-plugin-module-resolver": "2.7.1",
     "babel-plugin-wrap-in-js": "^1.1.1",
@@ -27,8 +26,6 @@
     "react-dom": "^15.6.1",
     "semantic-ui-react": "^0.73.1",
     "serve-favicon": "^2.4.4",
-    "socket.io-client": "^2.0.3",
-    "subscriptions-transport-ws": "^0.9.0",
     "universal-cookie": "^2.1.0"
   },
   "browser": {
