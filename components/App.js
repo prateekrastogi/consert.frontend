@@ -23,8 +23,8 @@ export default class App extends React.Component {
         </Head>
 
         <noscript dangerouslySetInnerHTML={{
-          __html: `<iframe src='https://www.googletagmanager.com/ns.html?id=${process.env.GTM_CODE}EXTERNAL_FRAGMENT'
-          '0'       '0'ght="0"'display:none;visibility:hidden'isibility:hidden"></iframe>`
+          __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=${process.env.GTM_CODE}"
+                    height="0" width="0" style="display:none;visibility:hidden"></iframe>`
         }} />
 
         <div>
