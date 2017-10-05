@@ -1,10 +1,12 @@
 import React from 'react'
 import withData from '../lib/withData'
 import App from '../components/App'
-import { Sidebar, Menu, Icon } from 'semantic-ui-react'
+import {Sidebar, Menu, Icon} from 'semantic-ui-react'
+import ReactPlayer from 'react-player'
 
 class Index extends React.Component {
   render () {
+    console.log('in render')
     return (<App>
       <Sidebar as={Menu} animation='overlay' width='thin' visible icon='labeled' vertical inverted>
         <Menu.Item name='home'>
@@ -20,7 +22,9 @@ class Index extends React.Component {
             Channels
         </Menu.Item>
       </Sidebar>
+      <ReactPlayer url='https://www.youtube.com/watch?v=uth-8cr4XFc' muted />
     </App>
+
     )
   }
 }
