@@ -6,7 +6,6 @@ import ReactPlayer from 'react-player'
 
 class Index extends React.Component {
   render () {
-    console.log('in render')
     return (<App>
       <Sidebar as={Menu} animation='overlay' width='thin' visible icon='labeled' vertical inverted>
         <Menu.Item name='home'>
