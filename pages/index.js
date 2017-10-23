@@ -1,7 +1,7 @@
 import React from 'react'
 import withData from '../lib/withData'
 import App from '../components/App'
-import {Sidebar, Menu, Icon} from 'semantic-ui-react'
+import {Sidebar, Menu, Icon, Grid} from 'semantic-ui-react'
 import Player from '../components/Player'
 
 class Index extends React.Component {
@@ -21,7 +21,6 @@ class Index extends React.Component {
             Channels
         </Menu.Item>
       </Sidebar>
-      <Player url='https://www.youtube.com/watch?v=uth-8cr4XFc' muted />
     </App>
 
     )
