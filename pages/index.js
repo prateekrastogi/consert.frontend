@@ -1,8 +1,7 @@
 import React from 'react'
 import withData from '../lib/withData'
 import App from '../components/App'
-import {Sidebar, Menu, Icon, Grid} from 'semantic-ui-react'
-import Player from '../components/Player'
+import {Sidebar, Menu, Icon} from 'semantic-ui-react'
 
 class Index extends React.Component {
   render () {
