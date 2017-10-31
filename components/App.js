@@ -41,8 +41,8 @@ export default class App extends React.Component {
   fingerPrintBrowser () {
     const cookies = new Cookies()
 
-    if (!cookies.get('cuId')) {
-      cookies.set('cuId', cuid(), {maxAge: process.env.COOKIE_DAILY_TTL * 365})
+    if (!cookies.get('clientId')) {
+      cookies.set('clientId', cuid(), {maxAge: process.env.COOKIE_DAILY_TTL * 365})
     }
 
     if (!cookies.get('browserId')) {
