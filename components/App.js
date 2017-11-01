@@ -10,7 +10,7 @@ export default class App extends React.Component {
     return (
       <main>
         <Head>
-          <link rel='stylesheet prefetch' href={process.env.SEMANTIC_UI_ICON_URL} />
+          <link rel='stylesheet preload' href={process.env.SEMANTIC_UI_ICON_URL} />
 
           <meta name='viewport' content='width=device-width, initial-scale=1.0' />
 
