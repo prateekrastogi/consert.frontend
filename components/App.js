@@ -44,7 +44,7 @@ export default class App extends React.Component {
     const cookies = new Cookies()
 
     if (!cookies.get('clientId')) {
-      cookies.set('clientId', cuid(), {maxAge: process.env.COOKIE_DAILY_TTL * 365})
+      cookies.set('clientId', cuid(), {maxAge: process.env.COOKIE_DAILY_TTL * 365 * 10})
     }
 
     if (!cookies.get('browserId')) {
