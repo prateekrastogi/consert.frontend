@@ -1,15 +1,16 @@
-FROM node:8.1.2-alpine
+FROM node:8.9.1-alpine
 
 # Create app directory
 RUN mkdir -p /frontend
 WORKDIR /frontend
 
 # Bundle app source
-COPY package.json package-lock.json server.js redirects.production.js /frontend/
+COPY package.json package-lock.json server.js redirects.production.js .babelrc .env.production.config next.config.js /frontend/
 COPY /pages /frontend/pages
 COPY /static /frontend/static
 COPY /lib /frontend/lib
 COPY /components /frontend/components
+COPY /semantic/dist/semantic.min.css /frontend/semantic/dist/semantic.min.css
 
 # Install app dependencies
 RUN npm install --production
