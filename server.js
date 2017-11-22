@@ -34,10 +34,12 @@ try {
 app.prepare().then(() => {
   const server = express()
 
-  // Use the `renderAndCache` utility defined below to serve pages
-  server.get('/', (req, res) => {
-    renderAndCache(req, res, '/')
-  })
+  if (process.env.NODE_ENV === 'production') {
+    // Use the `renderAndCache` utility defined below to serve pages
+    server.get('/', (req, res) => {
+      renderAndCache(req, res, '/')
+    })
+  }
 
   // Don't  refactor redirects into .env.config.* files as we can have multiple redirect routes. Thus, producing iteration issues.
   redirects.forEach(({from, to, type = 301, method = 'get'}) => {
