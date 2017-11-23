@@ -24,7 +24,6 @@ class Index extends React.Component {
         </Menu.Item>
 
       </Menu>
-
     </App>
 
     )
