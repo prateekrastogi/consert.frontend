@@ -1,25 +1,28 @@
 import React from 'react'
 import withData from '../lib/withData'
 import App from '../components/App'
-import { Image, Icon, Menu } from 'semantic-ui-react'
+import { Dimmer, Popup, Image, Menu } from 'semantic-ui-react'
+import Link from 'next/link'
 
 class Index extends React.Component {
   constructor (props) {
     super(props)
-    this.state = {activeItem: 'logo'}
+    this.state = {active: false}
   }
 
   render () {
+    const { active } = this.state
     return (<App>
       <Menu inverted size='massive' widths={3}>
 
         <Menu.Item name='logo'>
-          <Image as='a' href={process.env.LOGO_HOME} alt='consert' src='../static/logo.svg' size='tiny' />
+          <Popup inverted trigger={<Image alt='consert' src='../static/logo.svg' size='tiny' />} content='consert' />
         </Menu.Item>
 
         <Menu.Item name='explore' position='right'>
-          <Image alt='explore' src='../static/explore.svg' size='tiny' />
+          <Popup inverted trigger={<Image alt='explore' src='../static/explore.svg' size='tiny' />} content='explore' />
         </Menu.Item>
+
       </Menu>
 
     </App>
