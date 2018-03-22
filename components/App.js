@@ -1,7 +1,7 @@
 import React from 'react'
 import stylesheet from 'styles/semantic.min.css'
 import Head from 'next/head'
-import Cookies from 'universal-cookie'
+import Cookies from 'js-cookie'
 import Fingerprint from 'fingerprintjs2'
 import cuid from 'cuid'
 
@@ -41,15 +41,13 @@ export default class App extends React.Component {
   }
 
   fingerPrintBrowser () {
-    const cookies = new Cookies()
-
-    if (!cookies.get('clientId')) {
-      cookies.set('clientId', cuid(), {maxAge: process.env.COOKIE_DAILY_TTL * 365 * 10})
+    if (!Cookies.get('clientId')) {
+      Cookies.set('clientId', cuid(), {expires: (process.env.COOKIE_TTL * 365)})
     }
 
-    if (!cookies.get('browserId')) {
+    if (!Cookies.get('browserId')) {
       new Fingerprint().get((fingerprint) => {
-        cookies.set('browserId', fingerprint, {maxAge: process.env.COOKIE_DAILY_TTL})
+        Cookies.set('browserId', fingerprint, {expires: parseInt(process.env.COOKIE_TTL)})
       })
     }
   }
