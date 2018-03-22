@@ -9,8 +9,7 @@
     "lint": "eslint components/* pages/* --fix",
     "lint:watch": "esw -w components/* pages/* --fix",
     "analyze": "cross-env ANALYZE=1 next build",
-    "semantic-watch": "cd semantic && gulp watch",
-    "semantic-build": "cd semantic && gulp build"
+    "semantic-transpile": "cd semantic && gulp build && gulp watch"
   },
   "dependencies": {
     "apollo-cache-inmemory": "^1.1.11",
