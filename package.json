@@ -23,6 +23,7 @@
     "js-cookie": "^2.2.0",
     "lru-cache": "^4.1.2",
     "next": "^5.0.0",
+    "next-compose": "0.0.2",
     "prop-types": "^15.6.1",
     "raw-loader": "^0.5.1",
     "react": "^16.2.0",
@@ -39,7 +40,8 @@
     "babel-plugin-wrap-in-js": false,
     "raw-loader": false,
     "cross-env": false,
-    "lru-cache": false
+    "lru-cache": false,
+    "next-compose": false
   },
   "devDependencies": {
     "eslint": "^4.19.1",

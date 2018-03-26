@@ -1,4 +1,6 @@
-module.exports = {
+const compose = require('next-compose')
+
+const nextConfig = {
   webpack: (config) => {
     config.module.rules.push(
       {
@@ -17,3 +19,5 @@ module.exports = {
     return config
   }
 }
+
+module.exports = compose([nextConfig])
