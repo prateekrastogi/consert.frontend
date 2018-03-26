@@ -35,7 +35,9 @@ app.prepare().then(() => {
   const server = express()
 
   if (process.env.NODE_ENV === 'production') {
-    // Use the `renderAndCache` utility defined below to serve pages
+    /* Use the `renderAndCache` utility defined below to serve pages
+      Use multiple such function calls to add multiple routes for LRU Catching
+    */
     server.get('/', (req, res) => {
       renderAndCache(req, res, '/')
     })
@@ -68,26 +70,32 @@ function getCacheKey (req) {
   return `${req.url}`
 }
 
-function renderAndCache (req, res, pagePath, queryParams) {
+async function renderAndCache (req, res, pagePath, queryParams) {
   const key = getCacheKey(req)
 
   // If we have a page in the cache, let's serve it
   if (ssrCache.has(key)) {
-    console.log(`CACHE HIT: ${key}`)
+    res.setHeader('x-cache', 'HIT')
     res.send(ssrCache.get(key))
     return
   }
 
-  // If not let's render the page into HTML
-  app.renderToHTML(req, res, pagePath, queryParams)
-    .then((html) => {
-      // Let's cache this page
-      console.log(`CACHE MISS: ${key}`)
-      ssrCache.set(key, html)
+  try {
+    // If not let's render the page into HTML
+    const html = await app.renderToHTML(req, res, pagePath, queryParams)
 
+    // Something is wrong with the request, let's skip the cache
+    if (res.statusCode !== 200) {
       res.send(html)
-    })
-    .catch((err) => {
-      app.renderError(err, req, res, pagePath, queryParams)
-    })
+      return
+    }
+
+    // Let's cache this page
+    ssrCache.set(key, html)
+
+    res.setHeader('x-cache', 'MISS')
+    res.send(html)
+  } catch (err) {
+    app.renderError(err, req, res, pagePath, queryParams)
+  }
 }
