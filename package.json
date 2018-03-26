@@ -7,8 +7,6 @@
     "build": "next build",
     "start": "cross-env NODE_ENV=production node server.js",
     "lint": "eslint components/* pages/* --fix",
-    "lint:watch": "esw -w components/* pages/* --fix",
-    "analyze": "cross-env ANALYZE=1 next build",
     "semantic-transpile": "cd semantic && gulp build && gulp watch"
   },
   "dependencies": {
@@ -55,7 +53,6 @@
     "eslint-plugin-standard": "^3.0.1",
     "eslint-watch": "^3.1.3",
     "gulp": "^3.9.1",
-    "semantic-ui": "^2.3.1",
-    "webpack-bundle-analyzer": "^2.11.1"
+    "semantic-ui": "^2.3.1"
   }
 }
