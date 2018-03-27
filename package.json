@@ -26,6 +26,7 @@
     "lru-cache": "^4.1.2",
     "next": "^5.1.0",
     "next-compose": "0.0.2",
+    "next-offline": "^2.2.0",
     "next-optimized-images": "^1.2.1",
     "prop-types": "^15.6.1",
     "raw-loader": "^0.5.1",
@@ -45,6 +46,7 @@
     "cross-env": false,
     "lru-cache": false,
     "next-compose": false,
+    "next-offline": false,
     "next-optimized-images": false
   },
   "devDependencies": {

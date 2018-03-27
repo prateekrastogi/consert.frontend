@@ -41,6 +41,9 @@ app.prepare().then(() => {
     server.get('/', (req, res) => {
       renderAndCache(req, res, '/')
     })
+
+    // Registering ServiceWorker for PWA
+    server.use('/service-worker.js', express.static(path.join(__dirname, '.next', 'service-worker.js')))
   }
 
   // Don't  refactor redirects into .env.config.* files as we can have multiple redirect routes. Thus, producing iteration issues.
