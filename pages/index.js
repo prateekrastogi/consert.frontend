@@ -16,7 +16,7 @@ class Index extends React.Component {
       <Menu inverted size='massive' widths={3}>
 
         <Menu.Item name='logo'>
-          <Popup inverted trigger={<Image alt='consert' src='../static/logo.svg' size='tiny' />} content='consert' />
+          <Popup inverted trigger={<Image alt='consert' src={require('../static/logo.svg')} size='tiny' />} content='consert' />
         </Menu.Item>
 
         <Menu.Item name='explore' position='right'>

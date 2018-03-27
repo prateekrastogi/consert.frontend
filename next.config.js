@@ -1,5 +1,6 @@
 const compose = require('next-compose')
 const withBundleAnalyzer = require('@zeit/next-bundle-analyzer')
+const optimizedImages = require('next-optimized-images')
 
 const nextConfig = {
   webpack: (config) => {
@@ -36,4 +37,4 @@ const bundleAnalyzerConfig = {
   }
 }
 
-module.exports = compose([[withBundleAnalyzer, bundleAnalyzerConfig], nextConfig])
+module.exports = compose([optimizedImages, [withBundleAnalyzer, bundleAnalyzerConfig], nextConfig])
