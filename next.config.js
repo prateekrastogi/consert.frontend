@@ -1,3 +1,4 @@
+const path = require('path')
 const compose = require('next-compose')
 const withBundleAnalyzer = require('@zeit/next-bundle-analyzer')
 const optimizedImages = require('next-optimized-images')
@@ -26,8 +27,10 @@ const nextConfig = {
 
 const manifestConfig = {
   manifest: {
+    display: 'fullscreen',
+    lang: 'en-US',
     icons: {
-      src: './assets/logo.png',
+      src: path.join(__dirname, 'assets', 'homescreen.png'),
       cache: true
     }
   }
@@ -49,6 +52,8 @@ const bundleAnalyzerConfig = {
 }
 
 module.exports = compose([
+  nextConfig,
   withOffline, optimizedImages,
-  [withBundleAnalyzer, bundleAnalyzerConfig], nextConfig
+  [withManifest, manifestConfig],
+  [withBundleAnalyzer, bundleAnalyzerConfig]
 ])

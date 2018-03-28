@@ -4,6 +4,7 @@ import Head from 'next/head'
 import Cookies from 'js-cookie'
 import Fingerprint from 'fingerprintjs2'
 import cuid from 'cuid'
+import Manifest from 'next-manifest/manifest'
 
 export default class App extends React.Component {
   render () {
@@ -12,9 +13,16 @@ export default class App extends React.Component {
         <Head>
           <link rel='stylesheet preload' href={process.env.SEMANTIC_UI_ICON_URL} />
 
-          <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-
           <style dangerouslySetInnerHTML={{__html: stylesheet}} />
+
+          <Manifest
+            // path for manifest that will be deployed
+            href='/static/manifest/manifest.json'
+            // color for `theme-color`
+            themeColor='#F0F0F0'
+            // scale for `viewport` meta tag
+            initialScale='1'
+          />
 
           <script dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
