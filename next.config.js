@@ -2,6 +2,7 @@ const compose = require('next-compose')
 const withBundleAnalyzer = require('@zeit/next-bundle-analyzer')
 const optimizedImages = require('next-optimized-images')
 const withOffline = require('next-offline')
+const withManifest = require('next-manifest')
 
 const nextConfig = {
   webpack: (config) => {
@@ -23,6 +24,15 @@ const nextConfig = {
   }
 }
 
+const manifestConfig = {
+  manifest: {
+    icons: {
+      src: './assets/logo.png',
+      cache: true
+    }
+  }
+}
+
 const bundleAnalyzerConfig = {
   analyzeServer: ['server', 'both'].includes(process.env.BUNDLE_ANALYZE),
   analyzeBrowser: ['browser', 'both'].includes(process.env.BUNDLE_ANALYZE),
@@ -38,4 +48,7 @@ const bundleAnalyzerConfig = {
   }
 }
 
-module.exports = compose([withOffline, optimizedImages, [withBundleAnalyzer, bundleAnalyzerConfig], nextConfig])
+module.exports = compose([
+  withOffline, optimizedImages,
+  [withBundleAnalyzer, bundleAnalyzerConfig], nextConfig
+])

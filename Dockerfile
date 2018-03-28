@@ -7,7 +7,7 @@ WORKDIR /frontend
 # Bundle app source
 COPY package.json package-lock.json server.js redirects.production.js .babelrc .env.production.config next.config.js /frontend/
 COPY /pages /frontend/pages
-COPY /static /frontend/static
+COPY /assets /frontend/assets
 COPY /lib /frontend/lib
 COPY /components /frontend/components
 COPY /semantic/dist/semantic.min.css /frontend/semantic/dist/semantic.min.css

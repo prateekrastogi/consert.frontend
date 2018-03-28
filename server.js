@@ -53,7 +53,7 @@ app.prepare().then(() => {
     })
   })
 
-  server.use(favicon(path.join(__dirname, 'static', 'favicon.png')))
+  server.use(favicon(path.join(__dirname, 'assets', 'favicon.png')))
 
   server.get('*', (req, res) => {
     return handle(req, res)
