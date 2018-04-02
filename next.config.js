@@ -1,5 +1,5 @@
 const path = require('path')
-const compose = require('next-compose')
+const withPlugins = require('next-compose-plugins')
 const withBundleAnalyzer = require('@zeit/next-bundle-analyzer')
 const optimizedImages = require('next-optimized-images')
 const withOffline = require('next-offline')
@@ -51,9 +51,8 @@ const bundleAnalyzerConfig = {
   }
 }
 
-module.exports = compose([
-  nextConfig,
+module.exports = withPlugins([
   withOffline, optimizedImages,
   [withManifest, manifestConfig],
   [withBundleAnalyzer, bundleAnalyzerConfig]
-])
+], nextConfig)
