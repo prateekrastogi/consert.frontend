@@ -1,8 +1,10 @@
+import Link from 'next/link'
+import Head from 'next/head'
 import React from 'react'
 import withData from '../lib/withData'
 import App from '../components/App'
-import { Dimmer, Popup, Image, Menu } from 'semantic-ui-react'
-import Link from 'next/link'
+import { Popup, Image, Menu, Icon } from 'semantic-ui-react'
+import '../semantic/dist/semantic.min.css'
 
 class Index extends React.Component {
   constructor (props) {
@@ -13,6 +15,7 @@ class Index extends React.Component {
   render () {
     const { active } = this.state
     return (<App>
+
       <Menu inverted size='massive' widths={3}>
 
         <Menu.Item name='logo'>
@@ -24,6 +27,7 @@ class Index extends React.Component {
         </Menu.Item>
 
       </Menu>
+      <Icon name='world' />
     </App>
 
     )

@@ -1,5 +1,4 @@
 import React from 'react'
-import stylesheet from 'styles/semantic.min.css'
 import Head from 'next/head'
 import Cookies from 'js-cookie'
 import Fingerprint from 'fingerprintjs2'
@@ -11,9 +10,7 @@ export default class App extends React.Component {
     return (
       <main>
         <Head>
-          <link rel='stylesheet preload' href={process.env.SEMANTIC_UI_ICON_URL} />
-
-          <style dangerouslySetInnerHTML={{__html: stylesheet}} />
+          <link rel='stylesheet' href='/_next/static/style.css' />
 
           <Manifest
             // path for manifest that will be deployed

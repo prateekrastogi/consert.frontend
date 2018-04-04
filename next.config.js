@@ -1,5 +1,6 @@
 const path = require('path')
 const withPlugins = require('next-compose-plugins')
+const withCss = require('@zeit/next-css')
 const withBundleAnalyzer = require('@zeit/next-bundle-analyzer')
 const optimizedImages = require('next-optimized-images')
 const withOffline = require('next-offline')
@@ -7,19 +8,18 @@ const withManifest = require('next-manifest')
 
 const nextConfig = {
   webpack: (config) => {
-    config.module.rules.push(
-      {
-        test: /\.(css)/,
-        loader: 'emit-file-loader',
+    config.module.rules.push({
+      test: /\.(eot|otf|ttf|woff|woff2)$/,
+      use: {
+        loader: 'url-loader',
         options: {
-          name: 'dist/[path][name].[ext]'
+          limit: 100000,
+          publicPath: './',
+          outputPath: 'static/',
+          name: '[name].[ext]'
         }
-      },
-      {
-        test: /\.css$/,
-        use: ['babel-loader', 'raw-loader']
       }
-    )
+    })
 
     return config
   }
@@ -52,7 +52,8 @@ const bundleAnalyzerConfig = {
 }
 
 module.exports = withPlugins([
-  withOffline, optimizedImages,
+  withCss,
+  optimizedImages, withOffline,
   [withManifest, manifestConfig],
   [withBundleAnalyzer, bundleAnalyzerConfig]
 ], nextConfig)

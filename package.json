@@ -12,13 +12,13 @@
     "bundle_analyse": "cross-env BUNDLE_ANALYZE=both next build"
   },
   "dependencies": {
+    "@zeit/next-css": "^0.1.5",
     "apollo-boost": "^0.1.4",
     "babel-plugin-inline-dotenv": "^1.1.2",
-    "babel-plugin-module-resolver": "^3.1.1",
-    "babel-plugin-wrap-in-js": "^1.1.1",
     "cross-env": "^5.1.4",
     "cuid": "^2.1.1",
     "express": "^4.16.3",
+    "file-loader": "^1.1.11",
     "fingerprintjs2": "^1.6.1",
     "graphql": "^0.13.2",
     "isomorphic-unfetch": "^2.0.0",
@@ -30,25 +30,25 @@
     "next-offline": "^2.3.1",
     "next-optimized-images": "^1.2.2",
     "prop-types": "^15.6.1",
-    "raw-loader": "^0.5.1",
     "react": "^16.3.0",
     "react-apollo": "^2.1.1",
     "react-dom": "^16.3.0",
     "semantic-ui-react": "^0.79.0",
-    "serve-favicon": "^2.5.0"
+    "serve-favicon": "^2.5.0",
+    "url-loader": "^1.0.1"
   },
   "browser": {
+    "@zeit/next-css": false,
     "express": false,
     "serve-favicon": false,
-    "babel-plugin-module-resolver": false,
     "babel-plugin-inline-dotenv": false,
-    "babel-plugin-wrap-in-js": false,
-    "raw-loader": false,
     "cross-env": false,
+    "file-loader": false,
     "lru-cache": false,
     "next-compose-plugins": false,
     "next-offline": false,
-    "next-optimized-images": false
+    "next-optimized-images": false,
+    "url-loader": false
   },
   "devDependencies": {
     "@zeit/next-bundle-analyzer": "^0.1.1",
