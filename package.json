@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@zeit/next-css": "^0.1.5",
+    "@zeit/next-bundle-analyzer": "^0.1.1",
     "apollo-boost": "^0.1.4",
     "babel-plugin-inline-dotenv": "^1.1.2",
     "cross-env": "^5.1.4",
@@ -39,6 +40,7 @@
   },
   "browser": {
     "@zeit/next-css": false,
+    "@zeit/next-bundle-analyzer": false,
     "express": false,
     "serve-favicon": false,
     "babel-plugin-inline-dotenv": false,
@@ -51,7 +53,6 @@
     "url-loader": false
   },
   "devDependencies": {
-    "@zeit/next-bundle-analyzer": "^0.1.1",
     "eslint": "^4.19.1",
     "eslint-config-standard": "^11.0.0",
     "eslint-config-standard-jsx": "^5.0.0",
