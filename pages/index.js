@@ -4,7 +4,7 @@ import React from 'react'
 import withData from '../lib/withData'
 import App from '../components/App'
 import { Popup, Image, Menu, Icon } from 'semantic-ui-react'
-import '../semantic/dist/semantic.min.css'
+import '../semantic/dist/components/icon.min.css'
 
 class Index extends React.Component {
   constructor (props) {
