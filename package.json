@@ -37,7 +37,8 @@
     "semantic-ui-react": "^0.79.0",
     "serve-favicon": "^2.5.0",
     "url-loader": "^1.0.1",
-    "video.js": "^6.7.3"
+    "video.js": "^6.7.3",
+    "videojs-youtube": "^2.4.1"
   },
   "browser": {
     "@zeit/next-css": false,

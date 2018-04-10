@@ -10,11 +10,12 @@ import '../semantic/dist/components/button.min.css'
 class Index extends React.Component {
   render () {
     const videoJsOptions = {
-      autoplay: true,
+      techOrder: ['youtube'],
+      autoplay: false,
       controls: true,
       sources: [{
-        src: 'http://vjs.zencdn.net/v/oceans.mp4',
-        type: 'video/mp4'
+        src: 'https://www.youtube.com/watch?v=xjS6SftYQaQ',
+        type: 'video/youtube'
       }]
     }
 

@@ -11,7 +11,7 @@ export default class App extends React.Component {
       <main>
         <Head>
           <link rel='stylesheet' href='/_next/static/style.css' />
-
+          <link href="http://vjs.zencdn.net/6.6.3/video-js.css" rel="stylesheet" />
           <Manifest
             // path for manifest that will be deployed
             href='/static/manifest/manifest.json'
