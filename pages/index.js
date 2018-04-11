@@ -13,6 +13,7 @@ class Index extends React.Component {
       techOrder: ['youtube'],
       autoplay: false,
       controls: true,
+      muted: true,
       sources: [{
         src: 'https://www.youtube.com/watch?v=xjS6SftYQaQ',
         type: 'video/youtube'
