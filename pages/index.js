@@ -15,7 +15,7 @@ class Index extends React.Component {
       controls: true,
       muted: true,
       sources: [{
-        src: 'https://www.youtube.com/watch?v=xjS6SftYQaQ',
+        src: 'https://www.youtube.com/watch?v=jiLkBxw2pbs',
         type: 'video/youtube'
       }]
     }
