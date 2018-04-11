@@ -25,10 +25,6 @@ const nextConfig = {
   }
 }
 
-const cssConfig = {
-  cssLoaderOptions: {}
-}
-
 const manifestConfig = {
   manifest: {
     display: 'fullscreen',
@@ -56,7 +52,7 @@ const bundleAnalyzerConfig = {
 }
 
 module.exports = withPlugins([
-  [withCss, cssConfig],
+  withCss,
   optimizedImages, withOffline,
   [withManifest, manifestConfig],
   [withBundleAnalyzer, bundleAnalyzerConfig]
