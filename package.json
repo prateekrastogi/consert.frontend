@@ -7,8 +7,7 @@
     "build": "next build",
     "start": "cross-env NODE_ENV=production node server.js",
     "semantic-transpile": "cd semantic && gulp build && gulp watch",
-    "lint": "eslint components/* pages/* --fix",
-    "lint:watch": "esw -w components/* pages/* --fix",
+    "lint": "standard components/* pages/* --fix",
     "bundle_analyse": "cross-env BUNDLE_ANALYZE=both next build"
   },
   "dependencies": {
@@ -55,17 +54,8 @@
     "url-loader": false
   },
   "devDependencies": {
-    "eslint": "^4.19.1",
-    "eslint-config-standard": "^11.0.0",
-    "eslint-config-standard-jsx": "^5.0.0",
-    "eslint-plugin-graphql": "^1.5.0",
-    "eslint-plugin-import": "^2.10.0",
-    "eslint-plugin-node": "^6.0.1",
-    "eslint-plugin-promise": "^3.7.0",
-    "eslint-plugin-react": "^7.7.0",
-    "eslint-plugin-standard": "^3.0.1",
-    "eslint-watch": "^3.1.4",
     "gulp": "^3.9.1",
-    "semantic-ui": "^2.3.1"
+    "semantic-ui": "^2.3.1",
+    "standard": "^11.0.1"
   }
 }
