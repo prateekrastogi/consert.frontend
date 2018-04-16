@@ -1,8 +1,8 @@
 const path = require('path')
-const withPlugins = require('next-compose-plugins')
+const {withPlugins, optional} = require('next-compose-plugins')
 const withCss = require('@zeit/next-css')
-const withBundleAnalyzer = require('@zeit/next-bundle-analyzer')
 const optimizedImages = require('next-optimized-images')
+const { PHASE_PRODUCTION_BUILD } = require('next/constants')
 const withOffline = require('next-offline')
 const withManifest = require('next-manifest')
 
@@ -55,5 +55,5 @@ module.exports = withPlugins([
   withCss,
   optimizedImages, withOffline,
   [withManifest, manifestConfig],
-  [withBundleAnalyzer, bundleAnalyzerConfig]
+  [optional(() => require('@zeit/next-bundle-analyzer')), bundleAnalyzerConfig, [PHASE_PRODUCTION_BUILD]]
 ], nextConfig)
