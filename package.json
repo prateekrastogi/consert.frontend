@@ -11,6 +11,7 @@
     "bundle_analyse": "cross-env BUNDLE_ANALYZE=both next build"
   },
   "dependencies": {
+    "@zeit/next-bundle-analyzer": "^0.1.1",
     "@zeit/next-css": "^0.1.5",
     "apollo-boost": "^0.1.4",
     "babel-plugin-graphql-tag": "^1.5.0",
@@ -40,6 +41,7 @@
     "videojs-youtube": "^2.4.1"
   },
   "browser": {
+    "@zeit/next-bundle-analyzer": false,
     "@zeit/next-css": false,
     "express": false,
     "serve-favicon": false,
@@ -54,7 +56,6 @@
     "url-loader": false
   },
   "devDependencies": {
-    "@zeit/next-bundle-analyzer": "^0.1.1",
     "gulp": "^3.9.1",
     "semantic-ui": "^2.3.1",
     "standard": "^11.0.1"

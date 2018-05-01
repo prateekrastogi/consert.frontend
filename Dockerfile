@@ -23,7 +23,7 @@ RUN apk add --no-cache \
     libpng-dev \
     make \
     nasm\
-    && npm install \
+    && npm install --production\
     && npm run build\
     && apk del autoconf \
     automake \
