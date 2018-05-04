@@ -1,7 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
 import Cookies from 'js-cookie'
-import Fingerprint from 'fingerprintjs2'
 import cuid from 'cuid'
 import Manifest from 'next-manifest/manifest'
 
@@ -42,6 +41,9 @@ export default class App extends React.Component {
   }
 
   componentDidMount () {
+    if (process.browser) {
+      window.Fingerprint = require('fingerprintjs2') // In future https://github.com/zeit/next.js/issues/2940
+    }
     this.fingerPrintBrowser()
   }
 
