@@ -10,6 +10,11 @@ function About (props) {
     techOrder: ['youtube'],
     autoplay: false,
     controls: true,
+    controlBar: {
+      volumePanel: {
+        inline: false
+      }
+    },
     muted: true,
     sources: [{
       src: 'https://www.youtube.com/watch?v=jiLkBxw2pbs',
