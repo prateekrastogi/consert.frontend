@@ -13,7 +13,8 @@ function About (props) {
     controlBar: {
       volumePanel: {
         inline: false
-      }
+      },
+      playbackRateMenuButton: false
     },
     muted: true,
     sources: [{
