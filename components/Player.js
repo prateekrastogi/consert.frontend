@@ -3,6 +3,7 @@ import videojs from 'video.js'
 import 'videojs-youtube'
 import 'video.js/dist/video-js.css'
 import './Player.css'
+
 class Player extends Component {
   componentDidMount () {
     // instantiate Video.js

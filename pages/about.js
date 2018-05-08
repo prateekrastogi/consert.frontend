@@ -2,12 +2,12 @@ import withData from '../lib/withData'
 import { Icon, Button } from 'semantic-ui-react'
 import App from '../components/App'
 import Player from '../components/Player'
-import '../semantic/dist/components/icon.min.css'
 import '../semantic/dist/components/button.min.css'
+import '../semantic/dist/components/icon.min.css'
 
 function About (props) {
   const videoJsOptions = {
-    techOrder: ['youtube'],
+    techOrder: ['youtube'], // https://github.com/videojs/video.js/issues/953
     autoplay: false,
     controls: true,
     controlBar: {
