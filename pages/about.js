@@ -18,7 +18,7 @@ function About (props) {
     },
     muted: true,
     sources: [{
-      src: 'https://www.youtube.com/watch?v=xDMP3i36naA',
+      src: 'https://www.youtube.com/watch?v=jiLkBxw2pbs',
       type: 'video/youtube'
     }]
   }
