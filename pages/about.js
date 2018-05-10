@@ -18,14 +18,14 @@ function About (props) {
     },
     muted: true,
     sources: [{
-      src: 'https://www.youtube.com/watch?v=jiLkBxw2pbs',
+      src: 'https://www.youtube.com/watch?v=xDMP3i36naA',
       type: 'video/youtube'
     }]
   }
 
   return (
     <App>
-      <Icon name='world' />
+      <Icon name='.vjs-icon-expand-screen' />
       <Player {...videoJsOptions} />
       <Button>Button</Button>
     </App>
