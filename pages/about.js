@@ -14,7 +14,9 @@ function About (props) {
       volumePanel: {
         inline: false
       },
-      playbackRateMenuButton: false
+      playbackRateMenuButton: false,
+      progressControl: false,
+      remainingTimeDisplay: false
     },
     muted: true,
     sources: [{

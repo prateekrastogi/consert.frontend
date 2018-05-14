@@ -26,3 +26,7 @@ Always use icons from same icon pack to maintain consistency of design
   background-color: rgba(0,0,0,0) !important;
   color: #ffffff;
 }
+
+.video-js .vjs-fullscreen-control {
+  margin-left: auto;
+}
