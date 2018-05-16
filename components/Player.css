@@ -30,3 +30,7 @@ Always use icons from same icon pack to maintain consistency of design
 .video-js .vjs-fullscreen-control {
   margin-left: auto;
 }
+
+.vjs-tech {
+  pointer-events: none;
+}

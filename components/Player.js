@@ -6,6 +6,11 @@ import './Player.css'
 import './videojs-icons.css'
 
 class Player extends Component {
+  constructor (props) {
+    super(props)
+    this.togglePause = this.togglePause.bind(this)
+  }
+
   componentDidMount () {
     // instantiate Video.js
     this.player = videojs(this.videoNode, this.props, function onPlayerReady () {
@@ -26,11 +31,19 @@ class Player extends Component {
   render () {
     return (
       <div>
-        <div data-vjs-player>
+        <div data-vjs-player onClick={this.togglePause}>
           <video ref={node => (this.videoNode = node)} className='video-js' />
         </div>
       </div>
     )
+  }
+
+  togglePause (e) {
+    if (this.player.paused()) {
+      this.player.play()
+    } else {
+      this.player.pause()
+    }
   }
 }
 

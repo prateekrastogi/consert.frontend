@@ -22,12 +22,13 @@ function About (props) {
     sources: [{
       src: 'https://www.youtube.com/watch?v=jiLkBxw2pbs',
       type: 'video/youtube'
-    }]
+    }],
+    youtube: { iv_load_policy: 3 }
   }
 
   return (
     <App>
-      <Icon name='.vjs-icon-expand-screen' />
+      <Icon name='world' />
       <Player {...videoJsOptions} />
       <Button>Button</Button>
     </App>
