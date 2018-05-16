@@ -34,3 +34,18 @@ Always use icons from same icon pack to maintain consistency of design
 .vjs-tech {
   pointer-events: none;
 }
+
+.video-js .vjs-big-play-button {
+  top: 50%;
+  left: 50%;
+  margin-top: -0.75em;
+  margin-left: -1.5em;
+}
+
+.vjs-paused.vjs-has-started.video-js .vjs-big-play-button,.video-js.vjs-ended .vjs-big-play-button,.video-js.vjs-paused .vjs-big-play-button {
+  display: block;
+}
+
+.video-js .vjs-load-progress div,.vjs-seeking .vjs-big-play-button,.vjs-waiting .vjs-big-play-button {
+  display: none !important;
+}

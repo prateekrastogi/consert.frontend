@@ -14,13 +14,11 @@ function About (props) {
       volumePanel: {
         inline: false
       },
-      playbackRateMenuButton: false,
-      progressControl: false,
-      remainingTimeDisplay: false
+      playbackRateMenuButton: false
     },
     muted: true,
     sources: [{
-      src: 'https://www.youtube.com/watch?v=jiLkBxw2pbs',
+      src: 'https://www.youtube.com/watch?v=OrcVS3s5D34',
       type: 'video/youtube'
     }],
     youtube: { iv_load_policy: 3 }
