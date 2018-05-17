@@ -39,10 +39,8 @@ class Player extends Component {
   }
 
   togglePause (e) {
-    if (this.player.paused()) {
-      this.player.play()
-    } else {
-      this.player.pause()
+    if (e.target.className.includes('vjs-workinghover')) {
+      this.player.paused() ? this.player.play() : this.player.pause()
     }
   }
 }
