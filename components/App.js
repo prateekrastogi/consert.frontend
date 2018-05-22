@@ -9,6 +9,8 @@ export default class App extends React.Component {
     return (
       <main>
         <Head>
+          <link href='https://fonts.googleapis.com/css?family=Comfortaa|Nunito' rel='stylesheet' />
+
           <link rel='stylesheet' href='/_next/static/style.css' />
 
           <Manifest

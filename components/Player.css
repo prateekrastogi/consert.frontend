@@ -4,6 +4,11 @@
 Always use icons from same icon pack to maintain consistency of design
 */
 
+.video-js, .vjs-button, .vjs-big-play-button, .vjs-no-js, .vjs-menu .vjs-menu-content,
+.video-js .vjs-time-tooltip, .vjs-error .vjs-error-display:before {
+  font-family: Nunito, sans-serif;
+}
+
 .video-js .vjs-fullscreen-control .vjs-icon-placeholder:before, .vjs-icon-fullscreen-enter:before {
   content:"\f121";
   align-content: center;
