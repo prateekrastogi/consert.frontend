@@ -21,7 +21,8 @@ function About (props) {
       src: 'https://www.youtube.com/watch?v=OrcVS3s5D34',
       type: 'video/youtube'
     }],
-    youtube: { iv_load_policy: 3 }
+    youtube: { iv_load_policy: 3 },
+    enablePrivacyEnhancedMode: true
   }
 
   return (

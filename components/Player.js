@@ -16,6 +16,16 @@ class Player extends Component {
     this.player = videojs(this.videoNode, this.props, function onPlayerReady () {
       console.log('onPlayerReady', this)
     })
+
+    // enabling videojs-landscape-fullscreen plugin
+    require('videojs-landscape-fullscreen')
+    this.player.landscapeFullscreen({
+      fullscreen: {
+        enterOnRotate: true,
+        alwaysInLandscapeMode: true,
+        iOS: true
+      }
+    })
   }
 
   // destroy player on unmount
