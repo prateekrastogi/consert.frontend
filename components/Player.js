@@ -42,7 +42,7 @@ class Player extends Component {
     return (
       <div>
         <div data-vjs-player onClick={this.togglePause}>
-          <video ref={node => (this.videoNode = node)} className='video-js' />
+          <video ref={node => (this.videoNode = node)} className='video-js vjs-big-play-centered' />
         </div>
       </div>
     )
