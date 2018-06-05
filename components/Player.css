@@ -1,7 +1,8 @@
 /*
  Icon set used from: https://www.flaticon.com/authors/catalin-fertu [These icons are curved too]
 
-Always use icons from same icon pack to maintain consistency of design
+Always use icons from same icon pack to maintain consistency of design.
+Also, make sure that those icons are of same height, which is not the case in above icon pack.
 */
 
 .video-js, .vjs-button, .vjs-big-play-button, .vjs-no-js, .vjs-menu .vjs-menu-content,
