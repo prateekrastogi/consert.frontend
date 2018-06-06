@@ -10,16 +10,6 @@ Also, make sure that those icons are of same height, which is not the case in ab
   font-family: Nunito, sans-serif;
 }
 
-.video-js .vjs-fullscreen-control .vjs-icon-placeholder:before, .vjs-icon-fullscreen-enter:before {
-  content:"\f121";
-  align-content: center;
-}
-
-.vjs-icon-fullscreen-exit:before, .video-js.vjs-fullscreen .vjs-fullscreen-control .vjs-icon-placeholder:before {
-  content:"\f122";
-  align-content: center;
-}
-
 .video-js .vjs-progress-holder .vjs-play-progress, .video-js .vjs-progress-holder .vjs-load-progress, .video-js .vjs-progress-holder .vjs-load-progress div, .video-js .vjs-slider,.vjs-volume-level {
   border-radius: 0.15em;
 }
