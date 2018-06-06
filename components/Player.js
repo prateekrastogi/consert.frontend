@@ -11,12 +11,12 @@ class Player extends Component {
   }
 
   componentDidMount () {
-    // instantiate Video.js
+    // instantiate video.js
     this.player = videojs(this.videoNode, this.props, function onPlayerReady () {
       console.log('onPlayerReady', this)
     })
 
-    // initializing plugins
+    // initializing video.js plugins
     require('videojs-youtube')
     require('videojs-landscape-fullscreen')
 
