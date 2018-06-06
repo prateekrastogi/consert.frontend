@@ -20,7 +20,7 @@ class Player extends Component {
     require('videojs-youtube')
     require('videojs-landscape-fullscreen')
 
-    // plugins configuration
+    // configuring plugins
     this.player.landscapeFullscreen({
       fullscreen: {
         enterOnRotate: true,
