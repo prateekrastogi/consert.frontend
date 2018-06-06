@@ -55,6 +55,7 @@ export default class App extends React.Component {
     }
 
     if (!Cookies.get('browserId')) {
+      /* global Fingerprint */
       new Fingerprint().get((fingerprint) => {
         Cookies.set('browserId', fingerprint, {expires: parseInt(process.env.COOKIE_TTL)})
       })
