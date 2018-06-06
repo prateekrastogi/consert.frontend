@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import videojs from 'video.js'
-import 'videojs-youtube'
 import 'video.js/dist/video-js.min.css'
 import './Player.css'
 import './videojs-icons.css'
@@ -17,7 +16,8 @@ class Player extends Component {
       console.log('onPlayerReady', this)
     })
 
-    // enabling videojs-landscape-fullscreen plugin
+    // enabling plugins
+    require('videojs-youtube')
     require('videojs-landscape-fullscreen')
     this.player.landscapeFullscreen({
       fullscreen: {
