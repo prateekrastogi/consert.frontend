@@ -26,7 +26,7 @@ Also, make sure that those icons are of same height, which is not the case in ab
   color: #ffffff;
 }
 
-.vjs-control-bar .vjs-icon-placeholder:hover {
+.vjs-play-control:hover, .vjs-mute-control:hover, .vjs-fullscreen-control:hover {
   text-shadow: 0em 0em 1em white;
 }
 
