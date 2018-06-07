@@ -5,7 +5,7 @@ Always use icons from same icon pack to maintain consistency of design.
 Also, make sure that those icons are of same height, which is not the case in above icon pack.
 */
 
-.video-js, .vjs-button, .vjs-big-play-button, .vjs-no-js, .vjs-menu .vjs-menu-content,
+.video-js, .vjs-button, .vjs-big-play-button, .vjs-share-button, .vjs-no-js, .vjs-menu .vjs-menu-content,
 .video-js .vjs-time-tooltip, .vjs-error .vjs-error-display:before {
   font-family: Nunito, sans-serif;
 }

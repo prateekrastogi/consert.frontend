@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import videojs from 'video.js'
+import './ShareButton'
 import 'video.js/dist/video-js.min.css'
 import './Player.css'
 import './videojs-icons.css'
@@ -15,6 +16,8 @@ class Player extends Component {
     this.player = videojs(this.videoNode, this.props, function onPlayerReady () {
       console.log('onPlayerReady', this)
     })
+
+    this.player.addChild('ShareButton', {})
 
     // initializing video.js plugins
     require('videojs-youtube')
@@ -51,6 +54,7 @@ class Player extends Component {
   }
 
   togglePause (e) {
+    console.log(e)
     if (e.target.className.includes('vjs-workinghover')) {
       this.player.paused() ? this.player.play() : this.player.pause()
     }
