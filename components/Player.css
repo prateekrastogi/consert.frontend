@@ -18,7 +18,7 @@ Also, make sure that those icons are of same height, which is not the case in ab
 }
 
 .video-js .vjs-control-bar2 {
-  background-color: transparent
+  background-color: transparent;
 }
 
 .video-js .vjs-control-bar {

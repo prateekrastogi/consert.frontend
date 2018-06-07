@@ -3,7 +3,7 @@ import { Icon, Button } from 'semantic-ui-react'
 import App from '../components/App'
 import Player from '../components/Player'
 import '../semantic/dist/components/button.min.css'
-import '../semantic/dist/components/icon.min.css'
+import '../semantic/dist/components/ic'
 
 function About (props) {
   const videoJsOptions = {
