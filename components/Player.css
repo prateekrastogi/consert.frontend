@@ -10,6 +10,9 @@ Also, make sure that those icons are of same height, which is not the case in ab
   font-family: Nunito, sans-serif;
 }
 
+.vjs-icon-replay:before, .video-js .vjs-play-control.vjs-ended .vjs-icon-placeholder:before {
+  content: "\f101"; }
+
 .video-js .vjs-progress-holder .vjs-play-progress, .video-js .vjs-progress-holder .vjs-load-progress, .video-js .vjs-progress-holder .vjs-load-progress div, .video-js .vjs-slider,.vjs-volume-level {
   border-radius: 0.15em;
 }
