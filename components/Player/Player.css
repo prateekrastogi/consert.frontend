@@ -43,6 +43,14 @@ Also, make sure that those icons are of same height, which is not the case in ab
   background-color: transparent;
 }
 
+.video-js .vjs-big-play-button .vjs-icon-placeholder:before {
+  content: "\f121"
+}
+
+.vjs-has-started .vjs-big-play-button .vjs-icon-placeholder:before {
+  content: "\f101"
+}
+
 .video-js .vjs-big-play-button:hover, .video-js .vjs-big-play-button:focus:before, .video-js .vjs-big-play-button:focus {
   text-shadow: 0em 0em 0.6em white;
 }
