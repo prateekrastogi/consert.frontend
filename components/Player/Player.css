@@ -22,7 +22,7 @@ Also, make sure that those icons are of same height, which is not the case in ab
 }
 
 .video-js .vjs-control-bar {
-  background-color: rgba(0,0,0,0) !important;
+  background-color: rgba(0,0,0,0.333) !important;
   color: #ffffff;
 }
 
