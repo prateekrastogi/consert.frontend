@@ -5,60 +5,82 @@ Always use icons from same icon pack to maintain consistency of design.
 Also, make sure that those icons are of same height, which is not the case in above icon pack.
 */
 
-.video-js, .vjs-button, .vjs-big-play-button, .vjs-share-button, .vjs-no-js, .vjs-menu .vjs-menu-content,
-.video-js .vjs-time-tooltip, .vjs-error .vjs-error-display:before {
-  font-family: Nunito, sans-serif;
+.video-js,
+.vjs-button,
+.vjs-big-play-button,
+.vjs-share-button,
+.vjs-no-js,
+.vjs-menu .vjs-menu-content,
+.video-js .vjs-time-tooltip,
+.vjs-error .vjs-error-display:before {
+    font-family: Nunito, sans-serif;
 }
 
-.vjs-icon-replay:before, .video-js .vjs-play-control.vjs-ended .vjs-icon-placeholder:before {
-  content: "\f101"; }
+.vjs-icon-replay:before,
+.video-js .vjs-play-control.vjs-ended .vjs-icon-placeholder:before {
+    content: "\f101";
+}
 
-.video-js .vjs-progress-holder .vjs-play-progress, .video-js .vjs-progress-holder .vjs-load-progress, .video-js .vjs-progress-holder .vjs-load-progress div, .video-js .vjs-slider,.vjs-volume-level {
-  border-radius: 0.15em;
+.video-js .vjs-progress-holder .vjs-play-progress,
+.video-js .vjs-progress-holder .vjs-load-progress,
+.video-js .vjs-progress-holder .vjs-load-progress div,
+.video-js .vjs-slider,
+.vjs-volume-level {
+    border-radius: 0.15em;
 }
 
 .video-js .vjs-control-bar2 {
-  background-color: transparent;
+    background-color: transparent;
 }
 
 .video-js .vjs-control-bar {
-  background-color: rgba(0,0,0,0.333) !important;
-  color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.333) !important;
+    color: #ffffff;
 }
 
-.vjs-play-control:hover, .vjs-mute-control:hover, .vjs-fullscreen-control:hover {
-  text-shadow: 0em 0em 1em white;
+.vjs-play-control:hover,
+.vjs-mute-control:hover,
+.vjs-fullscreen-control:hover {
+    text-shadow: 0em 0em 1em white;
 }
 
 .video-js .vjs-fullscreen-control {
-  margin-left: auto;
+    margin-left: auto;
 }
 
 .vjs-tech {
-  pointer-events: none;
+    pointer-events: none;
 }
 
-.video-js .vjs-big-play-button, .video-js:hover .vjs-big-play-button, .video-js .vjs-big-play-button:focus {
-  border: none;
-  background-color: transparent;
+.video-js .vjs-big-play-button,
+.video-js:hover .vjs-big-play-button,
+.video-js .vjs-big-play-button:focus {
+    border: none;
+    background-color: transparent;
 }
 
 .video-js .vjs-big-play-button .vjs-icon-placeholder:before {
-  content: "\f121"
+    content: "\f121"
 }
 
 .vjs-has-started .vjs-big-play-button .vjs-icon-placeholder:before {
-  content: "\f101"
+    content: "\f101"
 }
 
-.video-js .vjs-big-play-button:hover, .video-js .vjs-big-play-button:focus:before, .video-js .vjs-big-play-button:focus {
-  text-shadow: 0em 0em 0.6em white;
+.video-js .vjs-big-play-button:hover,
+.video-js .vjs-big-play-button:focus:before,
+.video-js .vjs-big-play-button:focus {
+    text-shadow: 0em 0em 0.6em white;
 }
 
-.vjs-paused.vjs-has-started.video-js .vjs-big-play-button,.video-js.vjs-ended .vjs-big-play-button,.video-js.vjs-paused .vjs-big-play-button {
-  display: block;
+.vjs-paused.vjs-has-started.video-js .vjs-big-play-button,
+.video-js.vjs-ended .vjs-big-play-button,
+.video-js.vjs-paused .vjs-big-play-button {
+    display: block;
 }
 
-.video-js .vjs-load-progress div,.vjs-seeking .vjs-big-play-button,.vjs-waiting .vjs-big-play-button {
-  display: none !important;
+.video-js .vjs-load-progress div,
+.vjs-seeking .vjs-big-play-button,
+.vjs-waiting .vjs-big-play-button {
+    display: none !important;
 }
