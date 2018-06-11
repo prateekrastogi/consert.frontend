@@ -29,6 +29,18 @@ Also, make sure that those icons are of same height, which is not the case in ab
     border-radius: 0.15em;
 }
 
+.vjs-play-progress.vjs-slider-bar::before {
+    opacity: 0;
+}
+
+.video-js .vjs-progress-control:hover .vjs-progress-holder .vjs-play-progress.vjs-slider-bar::before {
+    opacity: 1;
+}
+
+.video-js .vjs-progress-control:hover .vjs-progress-holder {
+    font-size: 1em;
+}
+
 .video-js .vjs-control-bar2 {
     background-color: transparent;
 }
