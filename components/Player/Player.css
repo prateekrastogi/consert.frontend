@@ -96,3 +96,26 @@ Also, make sure that those icons are of same height, which is not the case in ab
 .vjs-waiting .vjs-big-play-button {
     display: none !important;
 }
+
+.video-js .vjs-share-button {
+  text-align: center;
+  position: absolute;
+  right: 0;
+  height: 3em;
+  width: 4em;
+  -webkit-box-flex: none;
+  -moz-box-flex: none;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+}
+
+.video-js .vjs-share-button .vjs-icon-placeholder:before {
+  font-family: VideoJS;
+  font-weight: normal;
+  font-style: normal;
+  text-align: center;
+  content: "\f10f";
+  font-size: 1.8em;
+  line-height: 1.67;
+}
