@@ -27,7 +27,7 @@ const nextConfig = {
 
 const manifestConfig = {
   manifest: {
-    display: 'fullscreen',
+    display: 'standalone',
     lang: 'en-US',
     icons: {
       src: path.join(__dirname, 'assets', 'homescreen.png'),
