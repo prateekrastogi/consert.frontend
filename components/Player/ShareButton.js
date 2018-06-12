@@ -12,6 +12,21 @@ class ShareButton extends Button {
   buildCSSClass () {
     return 'vjs-share-button'
   }
+
+  handleClick (e) {
+    if (e.target.className === 'vjs-icon-placeholder') {
+      e.stopPropagation()
+      /* global MouseEvent */
+      const event = new MouseEvent('click', {
+        view: window,
+        bubbles: true,
+        cancelable: true
+      })
+      const element = this.el()
+
+      element.dispatchEvent(event)
+    }
+  }
 }
 
 videojs.registerComponent('ShareButton', ShareButton)

@@ -8,7 +8,8 @@ import './videojs-icons.css'
 class Player extends Component {
   constructor (props) {
     super(props)
-    this.togglePause = this.togglePause.bind(this)
+
+    this.eventDispatcher = this.eventDispatcher.bind(this)
   }
 
   componentDidMount () {
@@ -46,15 +47,19 @@ class Player extends Component {
   render () {
     return (
       <div>
-        <div data-vjs-player onClick={this.togglePause}>
+        <div data-vjs-player onClick={this.eventDispatcher}>
           <video ref={node => (this.videoNode = node)} className='video-js vjs-big-play-centered' />
         </div>
       </div>
     )
   }
 
+  eventDispatcher (event) {
+    this.togglePause(event)
+  }
+
   togglePause (e) {
-    console.log(e)
+    console.log(e.target.className)
     if (e.target.className.includes('vjs-workinghover')) {
       this.player.paused() ? this.player.play() : this.player.pause()
     }
