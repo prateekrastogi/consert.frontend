@@ -65,10 +65,6 @@ Also, make sure that those icons are of same height, which is not the case in ab
     margin-left: auto;
 }
 
-.vjs-tech {
-    pointer-events: none;
-}
-
 .video-js .vjs-big-play-button,
 .video-js:hover .vjs-big-play-button,
 .video-js .vjs-big-play-button:focus {
@@ -122,8 +118,8 @@ Also, make sure that those icons are of same height, which is not the case in ab
         -o-transition: visibility 1s, opacity 1s;
         transition: visibility 1s, opacity 1s;
     }
-    .vjs-has-started.vjs-paused .vjs-big-play-button .vjs-icon-placeholder:before{
-      content: "\f101";
+    .vjs-has-started.vjs-paused .vjs-big-play-button .vjs-icon-placeholder:before {
+        content: "\f101";
     }
 }
 
@@ -170,4 +166,8 @@ Also, make sure that those icons are of same height, which is not the case in ab
     -ms-transition: visibility 1s, opacity 1s;
     -o-transition: visibility 1s, opacity 1s;
     transition: visibility 1s, opacity 1s;
+}
+
+.vjs-tech {
+    pointer-events: none;
 }
