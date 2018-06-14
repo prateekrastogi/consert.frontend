@@ -90,7 +90,7 @@ Also, make sure that those icons are of same height, which is not the case in ab
     text-shadow: 0em 0em 0.6em white;
 }
 
-.vjs-paused.vjs-has-started.video-js .vjs-big-play-button,
+.video-js.vjs-has-started.vjs-paused .vjs-big-play-button,
 .video-js.vjs-ended .vjs-big-play-button,
 .video-js.vjs-paused .vjs-big-play-button {
     display: block;
