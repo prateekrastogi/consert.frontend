@@ -9,7 +9,11 @@ class Player extends Component {
   constructor (props) {
     super(props)
 
-    this.eventDispatcher = this.eventDispatcher.bind(this)
+    this.state = {
+      isShareButtonClicked: false
+    }
+
+    this.clickDispatcher = this.clickDispatcher.bind(this)
   }
 
   componentDidMount () {
@@ -47,21 +51,28 @@ class Player extends Component {
   render () {
     return (
       <div>
-        <div data-vjs-player onClick={this.eventDispatcher}>
+        <div data-vjs-player onClick={this.clickDispatcher}>
           <video ref={node => (this.videoNode = node)} className='video-js vjs-big-play-centered' />
         </div>
       </div>
     )
   }
 
-  eventDispatcher (event) {
+  clickDispatcher (event) {
     this.togglePause(event)
+    this.isShareButtonClicked(event)
   }
 
   togglePause (e) {
     console.log(e.target.className)
     if (e.target.className.includes('vjs-workinghover')) {
       this.player.paused() ? this.player.play() : this.player.pause()
+    }
+  }
+
+  isShareButtonClicked (e) {
+    if (e.target.className === 'vjs-share-button') {
+      this.setState({isShareButtonClicked: true})
     }
   }
 }
