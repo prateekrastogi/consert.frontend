@@ -106,6 +106,25 @@ Also, make sure that those icons are of same height, which is not the case in ab
     .vjs-play-control.vjs-control.vjs-button {
         display: none;
     }
+    .vjs-has-started .vjs-big-play-button .vjs-icon-placeholder:before {
+        content: "\f103"
+    }
+    .vjs-has-started .vjs-big-play-button {
+        display: block;
+        pointer-events: none;
+    }
+    .vjs-has-started.vjs-user-inactive.vjs-playing .vjs-big-play-button {
+        visibility: visible;
+        opacity: 0;
+        -webkit-transition: visibility 1s, opacity 1s;
+        -moz-transition: visibility 1s, opacity 1s;
+        -ms-transition: visibility 1s, opacity 1s;
+        -o-transition: visibility 1s, opacity 1s;
+        transition: visibility 1s, opacity 1s;
+    }
+    .vjs-has-started.vjs-paused .vjs-big-play-button .vjs-icon-placeholder:before{
+      content: "\f101";
+    }
 }
 
 .video-js .vjs-share-button .vjs-icon-placeholder:before {
