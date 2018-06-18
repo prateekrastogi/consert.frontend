@@ -1,6 +1,4 @@
-import withData from '../lib/withData'
 import { Icon, Button } from 'semantic-ui-react'
-import App from '../components/App'
 import Player from '../components/PlayerCard/Player/Player'
 import '../semantic/dist/components/button.min.css'
 import '../semantic/dist/components/icon.min.css'
@@ -26,12 +24,12 @@ function About (props) {
   }
 
   return (
-    <App>
+    <div>
       <Icon name='world' />
       <Player {...videoJsOptions} />
       <Button>Button</Button>
-    </App>
+    </div>
   )
 }
 
-export default withData(About)
+export default About

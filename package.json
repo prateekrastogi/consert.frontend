@@ -13,10 +13,10 @@
     "dependencies": {
         "@zeit/next-bundle-analyzer": "^0.1.1",
         "@zeit/next-css": "^0.2.0",
-        "apollo-boost": "^0.1.7",
+        "apollo-boost": "^0.1.9",
         "babel-plugin-graphql-tag": "^1.6.0",
         "babel-plugin-inline-dotenv": "^1.1.2",
-        "cross-env": "^5.1.6",
+        "cross-env": "^5.2.0",
         "cuid": "^2.1.1",
         "express": "^4.16.3",
         "file-loader": "^1.1.11",
@@ -28,17 +28,17 @@
         "next": "^6.0.3",
         "next-compose-plugins": "^2.1.1",
         "next-manifest": "^1.5.0",
-        "next-offline": "^2.7.1",
+        "next-offline": "^2.7.2",
         "next-optimized-images": "^1.4.1",
         "prop-types": "^15.6.1",
-        "react": "^16.4.0",
-        "react-apollo": "^2.1.4",
-        "react-dom": "^16.4.0",
-        "semantic-ui-react": "^0.80.2",
+        "react": "^16.4.1",
+        "react-apollo": "^2.1.5",
+        "react-dom": "^16.4.1",
+        "semantic-ui-react": "^0.81.1",
         "serve-favicon": "^2.5.0",
         "url-loader": "^1.0.1",
         "video.js": "^7.0.3",
-        "videojs-landscape-fullscreen": "^1.0.0",
+        "videojs-landscape-fullscreen": "^1.0.1",
         "videojs-youtube": "^2.5.0"
     },
     "browser": {
@@ -58,7 +58,7 @@
     },
     "devDependencies": {
         "gulp": "^3.9.1",
-        "semantic-ui": "^2.3.1",
+        "semantic-ui": "^2.3.2",
         "standard": "^11.0.1"
     }
 }
