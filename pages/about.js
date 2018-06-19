@@ -1,5 +1,5 @@
 import { Icon, Button } from 'semantic-ui-react'
-import Player from '../components/PlayerCard/Player/Player'
+import {Player} from '../components/Player'
 import '../semantic/dist/components/button.min.css'
 import '../semantic/dist/components/icon.min.css'
 
@@ -20,7 +20,8 @@ function About (props) {
       type: 'video/youtube'
     }],
     youtube: { iv_load_policy: 3 },
-    enablePrivacyEnhancedMode: true
+    height: 480,
+    width: 720
   }
 
   return (

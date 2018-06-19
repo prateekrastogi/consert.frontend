@@ -64,7 +64,6 @@ class Player extends Component {
   }
 
   togglePause (e) {
-    console.log(e.target.className)
     if (e.target.className.includes('vjs-workinghover')) {
       this.player.paused() ? this.player.play() : this.player.pause()
     }
