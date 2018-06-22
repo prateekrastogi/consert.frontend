@@ -10,7 +10,7 @@ class Player extends Component {
     super(props)
 
     this.state = {
-      isShareButtonClicked: false
+      modalOpen: false
     }
 
     this.clickDispatcher = this.clickDispatcher.bind(this)
@@ -71,7 +71,7 @@ class Player extends Component {
 
   isShareButtonClicked (e) {
     if (e.target.className === 'vjs-share-button') {
-      this.setState({isShareButtonClicked: true})
+      this.setState({modalOpen: true})
     }
   }
 }
