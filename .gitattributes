@@ -1,1 +1,5 @@
+# Checkout with unix line ending
+* text eol=lf
+
+# Commit with unix line ending
 * text eol=lf
