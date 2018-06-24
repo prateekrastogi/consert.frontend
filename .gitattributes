@@ -1,5 +1,10 @@
 # Checkout with unix line ending
 * text eol=lf
 
+*.eot binary
+*.ttf binary
+*.woff binary
+*.woff2 binary
+
 # Commit with unix line ending
 * text eol=lf
