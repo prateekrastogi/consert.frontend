@@ -1,10 +1,7 @@
-# Checkout with unix line ending
+# Check-out & Check-in text files with unix line ending (http://schacon.github.io/git/gitattributes.html)
 * text eol=lf
 
-# Commit with unix line ending (https://stackoverflow.com/questions/10418975/how-to-change-line-ending-settings/40821931#40821931)
-* text eol=lf
-
-# All files that must be treated as binary and should not be modified
+# All files that must be treated as binary and must not be modified, but not identified as such
 *.eot binary
 *.ttf binary
 *.woff binary
