@@ -27,10 +27,11 @@ const nextConfig = {
 
 const manifestConfig = {
   manifest: {
+    name: 'consert',
     display: 'standalone',
     lang: 'en-US',
     icons: {
-      src: path.join(__dirname, 'assets', 'homescreen.png'),
+      src: path.join(__dirname, 'assets', 'logo.png'),
       cache: true
     }
   }
