@@ -1,8 +1,7 @@
 import App, {Container} from 'next/app'
 import React from 'react'
 import Head from 'next/head'
-import Cookies from 'js-cookie'
-import cuid from 'cuid'
+import { parseCookies, setCookie } from 'nookies'
 import Manifest from 'next-manifest/manifest'
 import withApolloClient from '../lib/with-apollo-client'
 import { ApolloProvider } from 'react-apollo'
@@ -52,14 +51,17 @@ class MyApp extends App {
   }
 
   fingerPrintBrowser () {
-    if (!Cookies.get('clientId')) {
-      Cookies.set('clientId', cuid(), {expires: (process.env.COOKIE_TTL * 365)})
+    const isBrowserFingerPrinted = () => {
+      const {browserId} = parseCookies({})
+      return !!browserId
     }
 
-    if (!Cookies.get('browserId')) {
+    if (!isBrowserFingerPrinted()) {
       /* global Fingerprint */
       new Fingerprint().get((fingerprint) => {
-        Cookies.set('browserId', fingerprint, {expires: parseInt(process.env.COOKIE_TTL)})
+        setCookie({}, 'browserId', fingerprint, {
+          maxAge: process.env.COOKIE_TTL
+        })
       })
     }
   }
