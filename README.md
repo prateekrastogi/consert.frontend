@@ -6,7 +6,7 @@ docker run -p 3000:3000 frontend
 
 ------ Naming & Code Conventions ------
 
-components: PascalCase 
+components/code-components: PascalCase 
 
 pages: lowercase
 
