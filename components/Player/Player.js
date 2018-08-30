@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 import videojs from 'video.js'
 import './ShareButton'
 import 'video.js/dist/video-js.min.css'
