@@ -14,4 +14,4 @@ lib: kebab-case
 
 generated/package default/framework files: Follow the generator/package default/framework naming conventions, overriding above conventions if necessary
 
-Using index.js files for components nested inside folder for maintaining clarity. For comprehensive reasoning visit:  https://alligator.io/react/index-js-public-interfaces/
+Use index.js files for folder organized & composition stitched components/libraries to maintain clarity. For comprehensive reasoning visit:  https://alligator.io/react/index-js-public-interfaces/
