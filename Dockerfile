@@ -5,12 +5,12 @@ RUN mkdir -p /frontend
 WORKDIR /frontend
 
 # Bundle app source
-COPY package.json package-lock.json server.js redirects.production.js .babelrc .env.production.config next.config.js /frontend/
 COPY /pages /frontend/pages
 COPY /assets /frontend/assets
 COPY /lib /frontend/lib
 COPY /components /frontend/components
 COPY /semantic/dist /frontend/semantic/dist
+COPY package.json package-lock.json server.js redirects.production.js .babelrc .env.production.config next.config.js /frontend/
 
 # Install app dependencies
 RUN apk add --no-cache \
