@@ -6,10 +6,12 @@ const next = require('next')
 const path = require('path')
 const favicon = require('serve-favicon')
 const LRUCache = require('lru-cache')
+const routes = require('./routes')
 
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({dev})
 const handle = app.getRequestHandler()
+const handler = routes.getRequestHandler(app)
 
 // This is where we cache our rendered HTML pages
 const ssrCache = new LRUCache({
@@ -54,6 +56,9 @@ app.prepare().then(() => {
   })
 
   server.use(favicon(path.join(__dirname, 'assets', 'favicon.png')))
+
+  // configuring express to use next-routes
+  server.use(handler)
 
   server.get('*', (req, res) => {
     return handle(req, res)
