@@ -22,7 +22,9 @@ const nextConfig = {
     })
 
     return config
-  }
+  },
+
+  useFileSystemPublicRoutes: false
 }
 
 const manifestConfig = {
