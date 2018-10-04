@@ -1,5 +1,5 @@
 import { Icon, Button } from 'semantic-ui-react'
-import {Player} from '../components/Player'
+import { Player } from '../components/Player'
 import '../semantic/dist/components/button.min.css'
 import '../semantic/dist/components/icon.min.css'
 

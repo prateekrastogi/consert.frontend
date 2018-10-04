@@ -1,5 +1,5 @@
 const path = require('path')
-const {withPlugins, optional} = require('next-compose-plugins')
+const { withPlugins, optional } = require('next-compose-plugins')
 const withCss = require('@zeit/next-css')
 const optimizedImages = require('next-optimized-images')
 const { PHASE_PRODUCTION_BUILD } = require('next/constants')

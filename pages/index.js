@@ -24,7 +24,7 @@ class Index extends React.Component {
   render () {
     return (
       <Query query={GET_APP_METADATA_TAGS} variables={queryVariables} >
-        {({loading, error, data}) => {
+        {({ loading, error, data }) => {
           if (loading) return 'Loading...'
           if (error) return `Error! ${error.message}`
           return (<p>{JSON.stringify(data)}</p>)

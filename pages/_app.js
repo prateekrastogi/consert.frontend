@@ -1,4 +1,4 @@
-import App, {Container} from 'next/app'
+import App, { Container } from 'next/app'
 import React from 'react'
 import Head from 'next/head'
 import { parseCookies, setCookie } from 'nookies'
@@ -8,7 +8,7 @@ import { ApolloProvider } from 'react-apollo'
 
 class MyApp extends App {
   render () {
-    const {Component, pageProps, apolloClient} = this.props
+    const { Component, pageProps, apolloClient } = this.props
 
     return <Container>
       <Head>
@@ -32,8 +32,8 @@ class MyApp extends App {
         }} />
       </Head>
       <noscript
-        dangerouslySetInnerHTML={{__html: `<iframe src="https://www.googletagmanager.com/ns.html?id=${process.env.GTM_CODE}"
-          height="0" width="0" style="display:none;visibility:hidden;"></iframe>`}} />
+        dangerouslySetInnerHTML={{ __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=${process.env.GTM_CODE}"
+          height="0" width="0" style="display:none;visibility:hidden;"></iframe>` }} />
 
       <ApolloProvider client={apolloClient}>
         <Component {...pageProps} />
@@ -50,7 +50,7 @@ class MyApp extends App {
 
   fingerPrintBrowser () {
     const isBrowserFingerPrinted = () => {
-      const {browserId} = parseCookies({})
+      const { browserId } = parseCookies({})
       return !!browserId
     }
 
