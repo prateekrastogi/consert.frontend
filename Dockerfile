@@ -10,7 +10,7 @@ COPY /assets /frontend/assets
 COPY /lib /frontend/lib
 COPY /components /frontend/components
 COPY /semantic/dist /frontend/semantic/dist
-COPY package.json package-lock.json server.js redirects.production.js .babelrc .env.production.config next.config.js /frontend/
+COPY package.json package-lock.json routes.js server.js redirects.production.js .babelrc .env.production.config next.config.js /frontend/
 
 # Install app dependencies
 RUN apk add --no-cache \

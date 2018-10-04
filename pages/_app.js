@@ -14,8 +14,6 @@ class MyApp extends App {
       <Head>
         <link href='https://fonts.googleapis.com/css?family=Comfortaa|Nunito' rel='stylesheet' />
 
-        <link rel='stylesheet' href='/_next/static/style.css' />
-
         <Manifest
           // path for manifest that will be deployed
           href='/static/manifest/manifest.json'
