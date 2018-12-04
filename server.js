@@ -9,7 +9,7 @@ const LRUCache = require('lru-cache')
 const routes = require('./routes')
 
 const dev = process.env.NODE_ENV !== 'production'
-const app = next({dev})
+const app = next({ dev })
 const handle = app.getRequestHandler()
 const handler = routes.getRequestHandler(app)
 
@@ -49,7 +49,7 @@ app.prepare().then(() => {
   }
 
   // Don't  refactor redirects into .env.config.* files as we can have multiple redirect routes. Thus, producing iteration issues.
-  redirects.forEach(({from, to, type = 301, method = 'get'}) => {
+  redirects.forEach(({ from, to, type = 301, method = 'get' }) => {
     server[method](from, (req, res) => {
       res.redirect(type, to)
     })
@@ -64,9 +64,9 @@ app.prepare().then(() => {
     return handle(req, res)
   })
 
-  server.listen(3000, err => {
+  server.listen(3333, err => {
     if (err) throw err
-    console.log('> Ready on http://localhost:3000')
+    console.log('> Ready on http://localhost:3333')
   })
 })
 
