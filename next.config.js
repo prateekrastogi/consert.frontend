@@ -33,7 +33,7 @@ const manifestConfig = {
     display: 'standalone',
     lang: 'en-US',
     icons: {
-      src: path.join(__dirname, 'assets', 'logo.png'),
+      src: path.join(__dirname, 'assets', 'pwa', 'logo.png'),
       cache: true
     }
   }
